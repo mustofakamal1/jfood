@@ -17,10 +17,14 @@ public class Customer
     /**
      * Constructor for objects of class Customer
      */
-    public Customer()
+    public Customer(int id, String name, String email, String password, String joinDate)
     {
         // initialise instance variables
-        
+        this.id = id;
+        this.name = name;
+        this.email = email;
+        this.password = password;
+        this.joinDate = joinDate;
     }
 
     /**
@@ -29,52 +33,56 @@ public class Customer
     public int getId()
     {
         // put your code here
-        return 0;
+        return id;
     }
     
     public String getName()
     {
-        return "OK";
+        return name;
     }
     
     public String getEmail()
     {
-        return "OK";
+        return email;
     }
     
     public String getPassword()
     {
-        return "OK";
+        return password;
     }
     
     public String getJoinDate()
     {
-        return "OK";
+        return joinDate;
     }
     
     public void setId(int id)
     {
-        
+        this.id = id;
     }
     
     public void setName(String name)
     {
-        
+        this.name = name;
     }
     
     public void setEmail(String email)
     {
-        
+        this.email = email;
     }
     
     public void setPassword(String Password)
     {
-        
+        this.password = password;
     }
     
     public void setJoinDate(String joinDate)
     {
-        
+        this.joinDate = joinDate;
     }
     
+    public void printData()
+    {
+        System.out.println(name);
+    }
 }
