@@ -154,4 +154,9 @@ public class Invoice
     {
         this.customer = customer;
     }
+    
+    public void printData()
+    {
+        System.out.println(totalPrice);
+    }
 }

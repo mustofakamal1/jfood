@@ -149,4 +149,9 @@ public class Food
     {
         this.category = category;
     }
+    
+    public void printData()
+    {
+        System.out.println(name);
+    }
 }

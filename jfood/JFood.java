@@ -7,11 +7,6 @@
  */
 public class JFood
 {
-    // instance variables - replace the example below with your own
-    /**
-     * Constructor for objects of class JFood
-     */
-
     /**
      * An example of a method - replace this comment with your own
      */
@@ -26,5 +21,15 @@ public class JFood
         cs1.printData();
         Invoice inv1 = new Invoice(1, 1, "20-20-2020", cs1, 20000);
         
+        //Post test Modul 2
+        Location loc1 = new Location("Jakarta Timur", "Jakarta", "Tempat Lahir");
+        Seller seller1 = new Seller(1706043020, "Mustofa Kamal", "mustofa.alhaddad@gmail.com", "085155499891", loc1);
+        Food makan1 = new Food(100, "Nasi", seller1, 1000, "Cepat");
+        Customer css1 = new Customer(1, "Dimas", "dimunter@gmail.com", "pass", "10-11-2019");
+        Invoice trans1 = new Invoice(2, 100, "20-20-2020", css1, 20000);
+        seller1.getName();
+        seller1.setName("Achmad Fatur Rizki");
+        seller1.getName();
+        makan1.printData();
     }
 }
