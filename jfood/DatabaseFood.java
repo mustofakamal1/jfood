@@ -1,9 +1,9 @@
 
 /**
- * Write a description of class DatabaseFood here.
+ * Seller adalah class yang berfungsi memproses informasi semua food di jFood.
  *
- * @author (your name)
- * @version (a version number or a date)
+ * @author Mustofa Kamal
+ * @version 28-02-2020
  */
 public class DatabaseFood
 {
@@ -11,7 +11,7 @@ public class DatabaseFood
     private String[] listFood;
 
     /**
-     * Constructor for objects of class DatabaseFood
+     * Constructor for objects of class DatabaseFood.
      */
     public DatabaseFood()
     {
@@ -19,26 +19,49 @@ public class DatabaseFood
     }
 
     /**
-     * An example of a method - replace this comment with your own
-     *
-     * @param  y  a sample parameter for a method
-     * @return    the sum of x and y
+     * Mengembalikan nilai true untuk menunjukkan method 
+     * dieksekusi hingga selesai.
+     * 
+     * @param food  food pada Class food yang akan diproses di 
+     *              method ini
+     * @return      true yang menunjukkan 1 atau benar
      */
     public boolean addFood(Food food)
     {
        return true;
     }
     
+    /**
+     * Mengembalikan nilai true untuk menunjukkan method 
+     * dieksekusi hingga selesai.
+     * 
+     * @param food  food pada Class food yang akan diproses di 
+     *              method ini
+     * @return      true yang menunjukkan 1 atau selesai
+     */
     public boolean removeFood(Food food)
     {
         return true;
     }
     
+    /**
+     * Mengembalikan nilai null untuk menunjukkan food tidak
+     * tersedia di database makanan. 
+     * 
+     * @param food  food pada Class food yang akan diproses di 
+     *              method ini
+     * @return      null yang menunjukkan kosong atau tidak ada
+     */
     public Food getFood()
     {
         return null;
     }
     
+    /**
+     * Mengembalikan daftar makanan yang ada di database makanan. 
+     * 
+     * @return      daftar makanan yang ada
+     */
     public String[] getListFood()
     {
         return listFood;

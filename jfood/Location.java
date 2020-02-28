@@ -1,9 +1,9 @@
 
 /**
- * Write a description of class Location here.
+ * Seller adalah class yang berfungsi memproses informasi location di jFood.
  *
- * @author (your name)
- * @version (a version number or a date)
+ * @author Mustofa Kamal
+ * @version 28-02-2020
  */
 public class Location
 {
@@ -13,7 +13,18 @@ public class Location
     private String city;
 
     /**
-     * Constructor for objects of class Location
+     * Constructor for objects of class Location.
+     * <p>
+     * Mengupdate id, name, email, phoneNumber, dan joinDate
+     * pada object baru seller dengan nilai yang dimasukkan.
+     * 
+     * @param id            angka unik yang dimiliki setiap seller 
+     *                      sebagai identifier
+     * @param name          nama dari seller
+     * @param email         alamat email dari seller
+     * @param phoneNumber   nomor telepon yang dimiliki seller 
+     * @param location      lokasi dari seller yang diambil dari 
+     *                      salah satu object dari class location
      */
     public Location(String city, String province, String description)
     {
@@ -24,10 +35,10 @@ public class Location
     }
 
     /**
-     * An example of a method - replace this comment with your own
-     *
-     * @param  y  a sample parameter for a method
-     * @return    the sum of x and y
+     * Mengembalikan provinsi dari object Location yang 
+     * bersangkutan.
+     * 
+     * @return  provinsi dari object Location
      */
     public String getProvince()
     {
@@ -35,36 +46,68 @@ public class Location
         return province;
     }
     
+    /**
+     * Mengembalikan kota dari object Location yang bersangkutan.
+     * 
+     * @return  provinsi dari object Location
+     */
     public String getCity()
     {
         // put your code here
         return city;
     }
     
+    /**
+     * Mengembalikan deskripsi dari object Location yang 
+     * bersangkutan.
+     * 
+     * @return  deskripsi dari object Location
+     */
     public String getDescription()
     {
         // put your code here
         return description;
     }
     
+    /**
+     * Mengupdate provinsi dari object Location yang 
+     * bersangkutan.
+     * 
+     * @param province  provinsi yang akan diupdate ke object
+     */
     public void setProvince(String province)
     {
         this.province = province;
     }
     
+    /**
+     * Mengupdate kota dari object Location yang bersangkutan.
+     * 
+     * @param city  kota yang akan diupdate ke object
+     */
     public void setCity(String city)
     {
         this.city = city;
     }
     
+    /**
+     * Mengupdate deskripsi dari object Location yang 
+     * bersangkutan.
+     * 
+     * @param description   deskripsi yang akan diupdate ke 
+     *                      object
+     */
     public void setDescription(String description)
     {
         this.description = description;
     }
     
+    /**
+     * Menampilkan nama provinsi dari object Location yang 
+     * bersangkutan.
+     */
     public void printData()
     {
         System.out.println(province);
     }
-    
 }

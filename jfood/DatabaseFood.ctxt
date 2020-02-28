@@ -1,16 +1,19 @@
 #BlueJ class context
 comment0.target=DatabaseFood
-comment0.text=\r\n\ Write\ a\ description\ of\ class\ DatabaseFood\ here.\r\n\r\n\ @author\ (your\ name)\r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment0.text=\r\n\ Seller\ adalah\ class\ yang\ berfungsi\ memproses\ informasi\ semua\ food\ di\ jFood.\r\n\r\n\ @author\ Mustofa\ Kamal\r\n\ @version\ 28-02-2020\r\n
 comment1.params=
 comment1.target=DatabaseFood()
-comment1.text=\r\n\ Constructor\ for\ objects\ of\ class\ DatabaseFood\r\n
+comment1.text=\r\n\ Constructor\ for\ objects\ of\ class\ DatabaseFood.\r\n
 comment2.params=food
 comment2.target=boolean\ addFood(Food)
-comment2.text=\r\n\ An\ example\ of\ a\ method\ -\ replace\ this\ comment\ with\ your\ own\r\n\r\n\ @param\ \ y\ \ a\ sample\ parameter\ for\ a\ method\r\n\ @return\ \ \ \ the\ sum\ of\ x\ and\ y\r\n
+comment2.text=\r\n\ Mengembalikan\ nilai\ true\ untuk\ menunjukkan\ method\ \r\n\ dieksekusi\ hingga\ selesai.\r\n\ \r\n\ @param\ food\ \ food\ pada\ Class\ food\ yang\ akan\ diproses\ di\ \r\n\ \ \ \ \ \ \ \ \ \ \ \ \ \ method\ ini\r\n\ @return\ \ \ \ \ \ true\ yang\ menunjukkan\ 1\ atau\ benar\r\n
 comment3.params=food
 comment3.target=boolean\ removeFood(Food)
+comment3.text=\r\n\ Mengembalikan\ nilai\ true\ untuk\ menunjukkan\ method\ \r\n\ dieksekusi\ hingga\ selesai.\r\n\ \r\n\ @param\ food\ \ food\ pada\ Class\ food\ yang\ akan\ diproses\ di\ \r\n\ \ \ \ \ \ \ \ \ \ \ \ \ \ method\ ini\r\n\ @return\ \ \ \ \ \ true\ yang\ menunjukkan\ 1\ atau\ selesai\r\n
 comment4.params=
 comment4.target=Food\ getFood()
+comment4.text=\r\n\ Mengembalikan\ nilai\ null\ untuk\ menunjukkan\ food\ tidak\r\n\ tersedia\ di\ database\ makanan.\ \r\n\ \r\n\ @param\ food\ \ food\ pada\ Class\ food\ yang\ akan\ diproses\ di\ \r\n\ \ \ \ \ \ \ \ \ \ \ \ \ \ method\ ini\r\n\ @return\ \ \ \ \ \ null\ yang\ menunjukkan\ kosong\ atau\ tidak\ ada\r\n
 comment5.params=
 comment5.target=java.lang.String[]\ getListFood()
+comment5.text=\r\n\ Mengembalikan\ daftar\ makanan\ yang\ ada\ di\ database\ makanan.\ \r\n\ \r\n\ @return\ \ \ \ \ \ daftar\ makanan\ yang\ ada\r\n
 numComments=6
