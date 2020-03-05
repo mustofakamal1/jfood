@@ -8,7 +8,7 @@
 public class DatabaseFood
 {
     // instance variables - replace the example below with your own
-    private String[] listFood;
+    private static String[] listFood;
 
     /**
      * Constructor for objects of class DatabaseFood.
@@ -26,7 +26,7 @@ public class DatabaseFood
      *              method ini
      * @return      true yang menunjukkan 1 atau benar
      */
-    public boolean addFood(Food food)
+    public static boolean addFood(Food food)
     {
        return true;
     }
@@ -39,7 +39,7 @@ public class DatabaseFood
      *              method ini
      * @return      true yang menunjukkan 1 atau selesai
      */
-    public boolean removeFood(Food food)
+    public static boolean removeFood(Food food)
     {
         return true;
     }
@@ -52,7 +52,7 @@ public class DatabaseFood
      *              method ini
      * @return      null yang menunjukkan kosong atau tidak ada
      */
-    public Food getFood()
+    public static Food getFood()
     {
         return null;
     }
@@ -62,7 +62,7 @@ public class DatabaseFood
      * 
      * @return      daftar makanan yang ada
      */
-    public String[] getListFood()
+    public static String[] getListFood()
     {
         return listFood;
     }
