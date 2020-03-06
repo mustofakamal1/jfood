@@ -1,4 +1,4 @@
-
+    
 /**
  * Write a description of class JFood here.
  *
@@ -38,5 +38,11 @@ public class JFood
         Seller sel3 = new Seller(1706043020, "Mustofa Kamal", "mustofa.alhaddad@gmail.com", "085155499891", loc3);
         Food makan3 = new Food(100, "Sushi", sel3, 1000, FoodCategory.Japanese);
         makan3.printData();
+    
+        //PostTest Modul 3
+        Food makan33 = new Food(1290, "Mie", sel3, 6800, FoodCategory.Beverages);
+        Customer cust33 = new Customer(33, "Pembeli", "Pembeli@gmail.com", "Pembelian", "10-11-2020");
+        Invoice inv33 = new Invoice(3300, makan33.getId(), "12-11-2020", cust33, makan33.getPrice(), InvoiceStatus.Finished);
+        inv33.printData();
     }
 }
