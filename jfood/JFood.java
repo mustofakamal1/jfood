@@ -36,13 +36,28 @@ public class JFood
         //CS Modul 3
         Location loc3 = new Location("Jakarta Timur", "Jakarta", "Tempat Lahir");
         Seller sel3 = new Seller(1706043020, "Mustofa Kamal", "mustofa.alhaddad@gmail.com", "085155499891", loc3);
-        Food makan3 = new Food(100, "Sushi", sel3, 1000, FoodCategory.Japanese);
-        makan3.printData();
+        //Food makan3 = new Food(100, "Sushi", sel3, 1000, FoodCategory.Japanese);
+        //makan3.printData();
     
         //PostTest Modul 3
-        Food makan33 = new Food(1290, "Mie", sel3, 6800, FoodCategory.Beverages);
-        Customer cust33 = new Customer(33, "Pembeli", "Pembeli@gmail.com", "Pembelian", "10-11-2020");
-        Invoice inv33 = new Invoice(3300, makan33.getId(), "12-11-2020", cust33, makan33.getPrice(), InvoiceStatus.Finished);
-        inv33.printData();
+        //Food makan33 = new Food(1290, "Mie", sel3, 6800, FoodCategory.Beverages);
+        //Customer cust33 = new Customer(33, "Pembeli", "Pembeli@gmail.com", "Pembelian", "10-11-2020");
+        //Invoice inv33 = new Invoice(3300, makan33.getId(), "12-11-2020", cust33, makan33.getPrice(), InvoiceStatus.Finished);
+        //inv33.printData();
+        
+        //Modul 4
+        Customer c4 = new Customer(1, "Andi", "@gmail.com", "Beli", "12-03-2020");
+        Promo p4 = new Promo(1, "CobaNih", 1000, 10000, true);
+        Food f4 = new Food(1, "Martabak", sel3, 15000, FoodCategory.Beverages);
+        Food f44 = new Food(2, "Kacang", sel3, 5000, FoodCategory.Beverages);
+        CashlessInvoice ci4 = new CashlessInvoice(1, f4, "12-30-2020", c4, InvoiceStatus.Ongoing);
+        CashlessInvoice ci44 = new CashlessInvoice(1, f4, "12-30-2020", c4, InvoiceStatus.Ongoing, p4);
+        CashlessInvoice ci444 = new CashlessInvoice(1, f44, "12-30-2020", c4, InvoiceStatus.Ongoing, p4);
+        ci4.setTotalPrice();
+        ci44.setTotalPrice();
+        ci444.setTotalPrice();
+        ci4.printData();
+        ci44.printData();
+        ci444.printData();
     }
 }

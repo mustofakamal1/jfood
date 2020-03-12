@@ -6,16 +6,15 @@
  * @version 28-02-2020
  */
 
-public class Invoice
+public abstract class Invoice
 {
     // instance variables - replace the example below with your own
     private int id;
-    private int idFood;
+    private Food food;
     private String date;
-    private int totalPrice;
+    protected int totalPrice;
     private Customer customer;
-    private PaymentType paymentType;
-    private InvoiceStatus status;
+    private InvoiceStatus invoiceStatus;
 
     /**
      * Constructor for objects of class Invoice.
@@ -32,16 +31,15 @@ public class Invoice
      *                      class Customer
      * @param totalPrice    total harga pada transaksi
      */
-    public Invoice(int id, int idFood, String date, Customer customer, int totalPrice,
-    InvoiceStatus status)
+    public Invoice(int id, Food food, String date, Customer customer,
+    InvoiceStatus invoiceStatus)
     {
         // initialise instance variables
         this.id = id;
-        this.idFood = idFood;
+        this.food = food;
         this.date = date;
         this.customer = customer;
-        this.totalPrice = totalPrice;
-        this.status = status;
+        this.invoiceStatus = invoiceStatus;
     }
 
     /**
@@ -61,9 +59,9 @@ public class Invoice
      * 
      * @return  angka unik makanan dari object Invoice
      */
-    public int getIdFood()
+    public Food getFood()
     {
-        return idFood;
+        return food;
     }
     
     /**
@@ -99,14 +97,11 @@ public class Invoice
         return customer;
     }
     
-    public PaymentType getPaymentType()
-    {
-        return paymentType;
-    }
+    public abstract PaymentType getPaymentType();
     
     public InvoiceStatus getInvoiceStatus()
     {
-        return status;
+        return invoiceStatus;
     }
     
     /**
@@ -128,9 +123,9 @@ public class Invoice
      * @param idFood    angka unik makanan yang akan diupdate ke 
      *                  object
      */
-    public void setIdFood(int idFood)
+    public void setFood(Food food)
     {
-        this.idFood = idFood;
+        this.food = food;
     }
     
     /**
@@ -152,10 +147,7 @@ public class Invoice
      * @param id    total harga transaksi yang akan diupdate ke 
      *              object
      */
-    public void setTotalPrice(int totalPrice)
-    {
-        this.totalPrice = totalPrice;
-    }
+    public abstract void setTotalPrice();
     
     /**
      * Mengupdate customer pada Class Customer dari object 
@@ -169,25 +161,10 @@ public class Invoice
         this.customer = customer;
     }
     
-    public void setPaymentType(PaymentType paymentType)
+    public void setInvoiceStatus(InvoiceStatus invoiceStatus)
     {
-        this.paymentType = paymentType;
+        this.invoiceStatus = invoiceStatus;
     }
     
-    public void setInvoiceStatus(InvoiceStatus status)
-    {
-        this.status = status;
-    }
-    
-    
-    public void printData()
-    {
-        System.out.println("============INVOICE============");
-        System.out.println("ID: " + id);
-        System.out.println("Food ID: " + idFood);
-        System.out.println("Date: " + date);
-        System.out.println("Customer: " + customer.getName());
-        System.out.println("Total Price: " + totalPrice);
-        System.out.println("Status: " + status);
-    }
+    public abstract void printData();
 }
