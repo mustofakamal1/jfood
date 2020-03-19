@@ -168,7 +168,7 @@ public class Customer
      */
     public void setPassword(String Password)
     {
-        boolean checkp = Pattern.matches("^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+=])(?=\\S+$).{6,}$", password);
+        boolean checkp = Pattern.matches("^(((?=.*[a-z])(?=.*[A-Z]))|((?=.*[a-z])(?=.*[0-9]))|((?=.*[A-Z])(?=.*[0-9])))(?=.{6,})", password);
         if(checkp){
             this.password = password;
         }
@@ -198,7 +198,8 @@ public class Customer
      * Menampilkan nama customer dari object customer yang 
      * bersangkutan.
      */
-    public String toString(){
+    public String toString()
+    {
         SimpleDateFormat formatter = new SimpleDateFormat("dd MMMMM yyyy");
         return (
             id + name + email + password + formatter.format(joinDate)
