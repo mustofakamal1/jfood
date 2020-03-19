@@ -154,11 +154,10 @@ public class Seller
         this.location = location;
     }
     
-    /**
-     * Menampilkan nama penjual dari object Seller yang bersangkutan.
-     */
-    public void printData()
-    {
-        System.out.println(name);
+    public String toString(){
+        return (
+            id + name + phoneNumber + location
+        ).toString();
     }
+   
 }

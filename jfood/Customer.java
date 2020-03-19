@@ -1,4 +1,7 @@
-
+import java.util.*;
+import java.util.regex.*;
+import java.text.SimpleDateFormat;  
+import java.util.Date; 
 /**
  * Customer adalah class yang berfungsi memproses informasi 
  * customer di jFood.
@@ -13,7 +16,7 @@ public class Customer
     private String name;
     private String email;
     private String password;
-    private String joinDate;
+    private Calendar joinDate;
     
     /**
      * Constructor for objects of class Customer.
@@ -31,14 +34,35 @@ public class Customer
      * @param joinDate  tanggal mulai menjadi customer atau 
      *                  membuat akun
      */
-    public Customer(int id, String name, String email, String password, String joinDate)
+    public Customer(int id, String name, String email, String password, 
+    Calendar joinDate)
     {
         // initialise instance variables
         this.id = id;
         this.name = name;
-        this.email = email;
-        this.password = password;
+        this.setEmail(email);
+        this.setPassword(password);
         this.joinDate = joinDate;
+    }
+    
+    public Customer(int id, String name, String email, String password, 
+    int year, int month, int dayOfMonth)
+    {
+        // initialise instance variables
+        this.id = id;
+        this.name = name;
+        this.setEmail(email);
+        this.setPassword(password);
+        this.joinDate = new GregorianCalendar(year, month-1, dayOfMonth);
+    }
+    
+    public Customer(int id, String name, String email, String password)
+    {
+        // initialise instance variables
+        this.id = id;
+        this.name = name;
+        this.setEmail(email);
+        this.setPassword(password);
     }
 
     /**
@@ -91,7 +115,7 @@ public class Customer
      * 
      * @return  tanggal bergabung dari object customer
      */
-    public String getJoinDate()
+    public Calendar getJoinDate()
     {
         return joinDate;
     }
@@ -126,7 +150,13 @@ public class Customer
      */
     public void setEmail(String email)
     {
-        this.email = email;
+        boolean checke = Pattern.matches("^[\\w!$%’+/=?`{|~^-]+(?:\\.[\\w!$%’+/=?`{|}^-]+)*@(?:[a-zA-Z0-9-]+\\.)+[a-zA-Z]{2,6}$", email);
+        if(checke){
+            this.email = email;
+        }
+        else{
+            this.email = "";
+        }
     }
     
     /**
@@ -138,7 +168,13 @@ public class Customer
      */
     public void setPassword(String Password)
     {
-        this.password = password;
+        boolean checkp = Pattern.matches("^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+=])(?=\\S+$).{6,}$", password);
+        if(checkp){
+            this.password = password;
+        }
+        else{
+            this.password = "";
+        }
     }
     
     /**
@@ -148,17 +184,24 @@ public class Customer
      * @param joinDate  tanggal bergabung customer yang akan diupdate 
      *                  ke object
      */
-    public void setJoinDate(String joinDate)
+    public void setJoinDate(Calendar joinDate)
     {
         this.joinDate = joinDate;
+    }
+    
+    public void setJoinDate(int year, int month, int dayOfMonth)
+    {
+        this.joinDate = new GregorianCalendar(year, month-1, dayOfMonth);
     }
     
     /**
      * Menampilkan nama customer dari object customer yang 
      * bersangkutan.
      */
-    public void printData()
-    {
-        System.out.println(name);
+    public String toString(){
+        SimpleDateFormat formatter = new SimpleDateFormat("dd MMMMM yyyy");
+        return (
+            id + name + email + password + formatter.format(joinDate)
+        ).toString();
     }
 }

@@ -89,13 +89,10 @@ public class Promo
         this.active = active;
     }
     
-    public void printData()
-    {
-        System.out.println("============PROMO============");
-        System.out.println("ID: " + id);
-        System.out.println("Code: " + code);
-        System.out.println("Discount: " + discount);
-        System.out.println("Harga Minimal: " + minPrice);
-        System.out.println("Status: " + active);
+    public String toString(){
+        return (
+            id + code + discount + minPrice + active
+        ).toString();
     }
+    
 }

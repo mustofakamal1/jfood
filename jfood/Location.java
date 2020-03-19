@@ -102,12 +102,10 @@ public class Location
         this.description = description;
     }
     
-    /**
-     * Menampilkan nama provinsi dari object Location yang 
-     * bersangkutan.
-     */
-    public void printData()
-    {
-        System.out.println(province);
+    public String toString(){
+        return (
+            province + city + description
+        ).toString();
     }
+    
 }

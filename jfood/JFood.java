@@ -46,10 +46,10 @@ public class JFood
         //inv33.printData();
         
         //Modul 4
-        Customer c4 = new Customer(1, "Andi", "@gmail.com", "Beli", "12-03-2020");
+        //Customer c4 = new Customer(1, "Andi", "@gmail.com", "Beli", "12-03-2020");
         //Promo p4 = new Promo(1, "CobaNih", 1000, 10000, true);
-        Food f4 = new Food(1, "Martabak", sel3, 15000, FoodCategory.Beverages);
-        Food f44 = new Food(2, "Kacang", sel3, 5000, FoodCategory.Beverages);
+        //Food f4 = new Food(1, "Martabak", sel3, 15000, FoodCategory.Beverages);
+        //Food f44 = new Food(2, "Kacang", sel3, 5000, FoodCategory.Beverages);
         // CashlessInvoice ci4 = new CashlessInvoice(1, f4, "12-30-2020", c4, InvoiceStatus.Ongoing);
         // CashlessInvoice ci44 = new CashlessInvoice(1, f4, "12-30-2020", c4, InvoiceStatus.Ongoing, p4);
         // CashlessInvoice ci444 = new CashlessInvoice(1, f44, "12-30-2020", c4, InvoiceStatus.Ongoing, p4);
@@ -61,11 +61,11 @@ public class JFood
         // ci444.printData();
         
         //Modul 4 - Post Test
-        CashInvoice cas4 = new CashInvoice(1, f4, "13-3-2020", c4, InvoiceStatus.Finished);
-        CashInvoice cas44 = new CashInvoice(1, f4, "13-3-2020", c4, InvoiceStatus.Finished, 3500);
-        cas4.setTotalPrice();
-        cas44.setTotalPrice();
-        cas4.printData();
-        cas44.printData();
+        //CashInvoice cas4 = new CashInvoice(1, f4, "13-3-2020", c4, InvoiceStatus.Finished);
+        //CashInvoice cas44 = new CashInvoice(1, f4, "13-3-2020", c4, InvoiceStatus.Finished, 3500);
+        //cas4.setTotalPrice();
+        //cas44.setTotalPrice();
+        //cas4.printData();
+        //cas44.printData();
     }
 }
