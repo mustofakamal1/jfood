@@ -1,4 +1,5 @@
-
+import java.text.SimpleDateFormat;  
+import java.util.Date; 
 /**
  * Write a description of class CashInvoice here.
  *
@@ -13,16 +14,16 @@ public class CashInvoice extends Invoice
     /**
      * Constructor for objects of class CashInvoice
      */
-    public CashInvoice(int id, Food food, String date, Customer customer,
+    public CashInvoice(int id, Food food, Customer customer,
     InvoiceStatus invoiceStatus)
     {
-        super(id, food, date, customer, invoiceStatus);
+        super(id, food, customer, invoiceStatus);
     }
     
-    public CashInvoice(int id, Food food, String date, Customer customer,
+    public CashInvoice(int id, Food food, Customer customer,
     InvoiceStatus invoiceStatus, int deliveryFee)
     {
-        super(id, food, date, customer, invoiceStatus);
+        super(id, food, customer, invoiceStatus);
         this.deliveryFee = deliveryFee;
     }
 
@@ -70,5 +71,24 @@ public class CashInvoice extends Invoice
         System.out.println("Total Price: " + totalPrice);
         System.out.println("Status: " + getInvoiceStatus());
         System.out.println("PaymentType: " + getPaymentType());
+    }
+   
+    public String toString()
+    {
+        String string = "";
+        Date date = getDate().getTime();
+            SimpleDateFormat formatter = new SimpleDateFormat("dd MMMMM yyyy");
+            String formatted = formatter.format(date);
+            string =  
+            "============INVOICE============\n"+
+            "ID: " + getId() + "\n" +
+            "Food: " + getFood().getName() + "\n" +
+            "Date:" + date + "\n" +
+            "Customer :" + getCustomer().getName() + "\n" +
+            "Total Price: " + totalPrice + "\n" +
+            "Status: " + getInvoiceStatus() + "\n" +
+            "PaymentType: " + getPaymentType();
+        System.out.println(string);
+        return string;
     }
 }

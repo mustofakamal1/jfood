@@ -1,4 +1,6 @@
-
+import java.text.SimpleDateFormat;  
+import java.util.Date;
+import java.util.*; 
 /**
  * Write a description of class CashlessInvoice here.
  *
@@ -14,16 +16,16 @@ public class CashlessInvoice extends Invoice
     /**
      * Constructor for objects of class CashlessInvoice
      */
-    public CashlessInvoice(int id, Food food, String date, Customer customer,
+    public CashlessInvoice(int id, Food food, Customer customer,
     InvoiceStatus invoiceStatus)
     {
-        super(id, food, date, customer, invoiceStatus);
+        super(id, food, customer, invoiceStatus);
     }
     
-    public CashlessInvoice(int id, Food food, String date, Customer customer,
+    public CashlessInvoice(int id, Food food, Customer customer,
     InvoiceStatus invoiceStatus, Promo promo)
     {
-        super(id, food, date, customer, invoiceStatus);
+        super(id, food, customer, invoiceStatus);
         this.promo = promo;
     }
 
@@ -61,20 +63,43 @@ public class CashlessInvoice extends Invoice
         }
     }
     
-    public void printData()
+    public void printData(){}
+    
+    public String toString()
     {
-        System.out.println("============INVOICE============");
-        System.out.println("ID: " + getId());
-        System.out.println("Food: " + getFood().getName());
-        System.out.println("Date: " + getDate());
-        System.out.println("Customer: " + getCustomer().getName());
+        String string = "";
         if(!(getPromo() == null || promo.getActive() == false ||  
         getFood().getPrice() < promo.getMinPrice()))
         {
-            System.out.println("Promo: " + promo.getCode());
+        Date date = getDate().getTime();
+            SimpleDateFormat formatter = new SimpleDateFormat("dd MMMMM yyyy");
+            String formatted = formatter.format(date);
+            string =  
+            "============INVOICE============\n"+
+            "ID: " + getId() + "\n" +
+            "Food: " + getFood().getName() + "\n" +
+            "Date:" + date + "\n" +
+            "Customer :" + getCustomer().getName() + "\n" +
+            "Promo: " + promo.getCode() + "\n" +
+            "Total Price: " + totalPrice + "\n" +
+            "Status: " + getInvoiceStatus() + "\n" +
+            "PaymentType: " + getPaymentType();
         }
-        System.out.println("Total Price: " + totalPrice);
-        System.out.println("Status: " + getInvoiceStatus());
-        System.out.println("PaymentType: " + getPaymentType());
+        else{
+        Date date = getDate().getTime();
+            SimpleDateFormat formatter = new SimpleDateFormat("dd MMMMM yyyy");
+            String formatted = formatter.format(date);
+            string =  
+            "============INVOICE============\n"+
+            "ID: " + getId() + "\n" +
+            "Food: " + getFood().getName() + "\n" +
+            "Date:" + date + "\n" +
+            "Customer :" + getCustomer().getName() + "\n" +
+            "Total Price: " + totalPrice + "\n" +
+            "Status: " + getInvoiceStatus() + "\n" +
+            "PaymentType: " + getPaymentType();
+        }
+        System.out.println(string);
+        return string;
     }
 }

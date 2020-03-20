@@ -48,7 +48,7 @@ public class JFood
         //Modul 4
         //Customer c4 = new Customer(1, "Andi", "@gmail.com", "Beli", "12-03-2020");
         //Promo p4 = new Promo(1, "CobaNih", 1000, 10000, true);
-        //Food f4 = new Food(1, "Martabak", sel3, 15000, FoodCategory.Beverages);
+        Food f4 = new Food(1, "Martabak", sel3, 15000, FoodCategory.Beverages);
         //Food f44 = new Food(2, "Kacang", sel3, 5000, FoodCategory.Beverages);
         // CashlessInvoice ci4 = new CashlessInvoice(1, f4, "12-30-2020", c4, InvoiceStatus.Ongoing);
         // CashlessInvoice ci44 = new CashlessInvoice(1, f4, "12-30-2020", c4, InvoiceStatus.Ongoing, p4);
@@ -72,11 +72,16 @@ public class JFood
         Customer c5 = new Customer(1, "Andi", "saya..gmail@gmail.com", "pass1234", k1);
         Customer c55 = new Customer(2, "saya", "saya.saya@gmail.com", "pas1SA1#Ss", 2020,7,31);
         Customer c555 = new Customer(3, "Ai", "kamal_&&@gmail.com", "pas9SA-1");
-        c5.toString();
-        c55.toString();
-        c555.toString();
+        //c5.toString();
+        //c55.toString();
+        //c555.toString();
         c5.setEmail("test@google.com");
         c5.setPassword("pas1SA1#Ss");
-        c5.toString();
+        //c5.toString();
+        
+        CashInvoice cas4 = new CashInvoice(1, f4, c5, InvoiceStatus.Finished);
+        CashlessInvoice ci4 = new CashlessInvoice(1, f4, c5, InvoiceStatus.Ongoing);
+        cas4.toString();
+        ci4.toString();
     }
 }

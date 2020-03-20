@@ -60,10 +60,12 @@ public class Customer
     public Customer(int id, String name, String email, String password)
     {
         // initialise instance variables
+        Calendar now = Calendar.getInstance();
         this.id = id;
         this.name = name;
         this.setEmail(email);
         this.setPassword(password);
+        this.joinDate = now;
     }
 
     /**

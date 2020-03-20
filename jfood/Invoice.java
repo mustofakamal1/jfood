@@ -1,4 +1,4 @@
-
+import java.util.*;
 /**
  * Seller adalah class yang berfungsi memproses informasi invoice di jFood.
  *
@@ -11,7 +11,7 @@ public abstract class Invoice
     // instance variables - replace the example below with your own
     private int id;
     private Food food;
-    private String date;
+    private Calendar date;
     protected int totalPrice;
     private Customer customer;
     private InvoiceStatus invoiceStatus;
@@ -31,15 +31,17 @@ public abstract class Invoice
      *                      class Customer
      * @param totalPrice    total harga pada transaksi
      */
-    public Invoice(int id, Food food, String date, Customer customer,
+    public Invoice(int id, Food food, Customer customer,
     InvoiceStatus invoiceStatus)
     {
         // initialise instance variables
+        Calendar now = Calendar.getInstance();
         this.id = id;
         this.food = food;
         this.date = date;
         this.customer = customer;
         this.invoiceStatus = invoiceStatus;
+        this.date = now;
     }
 
     /**
@@ -70,7 +72,7 @@ public abstract class Invoice
      * 
      * @return  tanggal transaksi dari object Invoice
      */
-    public String getDate()
+    public Calendar getDate()
     {
         return date;
     }
@@ -135,9 +137,14 @@ public abstract class Invoice
      * @param id    tanggal transaksi yang akan diupdate ke 
      *              object
      */
-    public void setDate(String date)
+    public void setDate(Calendar date)
     {
         this.date = date;
+    }
+    
+    public void setDate(int year, int month, int dayOfMonth)
+    {
+        this.date = new GregorianCalendar(year, month-1, dayOfMonth);;
     }
     
     /**
