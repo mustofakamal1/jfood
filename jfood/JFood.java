@@ -1,4 +1,4 @@
-    
+import java.util.*; 
 /**
  * Write a description of class JFood here.
  *
@@ -68,13 +68,14 @@ public class JFood
         //cas4.printData();
         //cas44.printData();
         //Modul 5
-        Customer c5 = new Customer(1, "Andi", "@gmail.com", "pass", 2020,7,31);
-        Customer c55 = new Customer(2, "saya", "saya@gmail.com", "pas1SA1#Ss", 2020,7,31);
-        Customer c555 = new Customer(3, "Ai", "kamal@gmail.com", "pas1SA-1");
+        Calendar k1 = new GregorianCalendar(2020, 3, 20);
+        Customer c5 = new Customer(1, "Andi", "saya..gmail@gmail.com", "pass1234", k1);
+        Customer c55 = new Customer(2, "saya", "saya.saya@gmail.com", "pas1SA1#Ss", 2020,7,31);
+        Customer c555 = new Customer(3, "Ai", "kamal_&&@gmail.com", "pas9SA-1");
         c5.toString();
         c55.toString();
         c555.toString();
-        c5.setEmail("g@google.com");
+        c5.setEmail("test@google.com");
         c5.setPassword("pas1SA1#Ss");
         c5.toString();
     }

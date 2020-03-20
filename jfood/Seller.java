@@ -155,9 +155,16 @@ public class Seller
     }
     
     public String toString(){
-        return (
-            id + name + phoneNumber + location
-        ).toString();
+        String string = "";
+        string =  
+            "============SELLER============\n"+
+            "ID: " + id + "\n" +
+            "Name: " + name + "\n" +
+            "Seller: " + phoneNumber + "\n" +
+            "Category: " + location;
+        
+        System.out.println(string);
+        return string;
     }
    
 }

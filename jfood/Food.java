@@ -151,10 +151,18 @@ public class Food
     }
     
     public String toString(){
-        return (
-            id + name + seller + seller.getLocation().getCity() + 
-            price + category
-        ).toString();
+        String string = "";
+        string =  
+            "============FOOD============\n"+
+            "ID: " + id + "\n" +
+            "Name: " + name + "\n" +
+            "Seller: " + seller + "\n" +
+            "MinPrice: " + seller.getLocation().getCity() + "\n" +
+            "Active Status: " + price + "\n" +
+            "Category: " + category;
+        
+        System.out.println(string);
+        return string;
     }
     
 }

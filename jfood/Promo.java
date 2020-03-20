@@ -90,9 +90,17 @@ public class Promo
     }
     
     public String toString(){
-        return (
-            id + code + discount + minPrice + active
-        ).toString();
+        String string = "";
+        string =  
+            "============PROMO============\n"+
+            "ID: " + id + "\n" +
+            "Code: " + code + "\n" +
+            "Discount: " + discount + "\n" +
+            "MinPrice: " + minPrice + "\n" +
+            "Active Status: " + active;
+        
+        System.out.println(string);
+        return string;
     }
     
 }

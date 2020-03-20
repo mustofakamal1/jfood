@@ -2,6 +2,7 @@ import java.util.*;
 import java.util.regex.*;
 import java.text.SimpleDateFormat;  
 import java.util.Date; 
+
 /**
  * Customer adalah class yang berfungsi memproses informasi 
  * customer di jFood.
@@ -150,7 +151,8 @@ public class Customer
      */
     public void setEmail(String email)
     {
-        boolean checke = Pattern.matches("^[\\w!$%’+/=?`{|~^-]+(?:\\.[\\w!$%’+/=?`{|}^-]+)*@(?:[a-zA-Z0-9-]+\\.)+[a-zA-Z]{2,6}$", email);
+        boolean checke = Pattern.matches("^[\\w%&_*~]+(?:\\.[\\w&_'*~]+)*@(?!-)(?:[a-zA-Z0-9-]+\\.)+[a-zA-Z]{2,6}$", email);
+        
         if(checke){
             this.email = email;
         }
@@ -166,9 +168,10 @@ public class Customer
      * @param password  password customer yang akan diupdate ke 
      *                  object
      */
-    public void setPassword(String Password)
+    public void setPassword(String password)
     {
-        boolean checkp = Pattern.matches("^(((?=.*[a-z])(?=.*[A-Z]))|((?=.*[a-z])(?=.*[0-9]))|((?=.*[A-Z])(?=.*[0-9])))(?=.{6,})", password);
+        boolean checkp = Pattern.matches("^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z]).{6,}$", password);
+        
         if(checkp){
             this.password = password;
         }
@@ -200,9 +203,31 @@ public class Customer
      */
     public String toString()
     {
-        SimpleDateFormat formatter = new SimpleDateFormat("dd MMMMM yyyy");
-        return (
-            id + name + email + password + formatter.format(joinDate)
-        ).toString();
+        String string = "";
+        
+        if(joinDate!=null){
+            Date date = joinDate.getTime();
+            SimpleDateFormat formatter = new SimpleDateFormat("dd MMMMM yyyy");
+            String formatted = formatter.format(date);
+            string =  
+            "============CUSTOMER============\n"+
+            "ID: " + id + "\n" +
+            "Name: " + name + "\n" +
+            "Email:" + email + "\n" +
+            "Password :" + password + "\n" +
+            "joinDate :" + joinDate.toString();
+        }
+        
+        else{
+            string =  
+            "============CUSTOMER============\n"+
+            "ID: " + id + "\n" +
+            "Name: " + name + "\n" +
+            "Email: " + email + "\n" +
+            "Password: " + password;
+        }
+        
+        System.out.println(string);
+        return string;
     }
 }

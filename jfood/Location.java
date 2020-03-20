@@ -103,9 +103,15 @@ public class Location
     }
     
     public String toString(){
-        return (
-            province + city + description
-        ).toString();
+        String string = "";
+        string =  
+            "===========LOCATION============\n"+
+            "Province: " + province + "\n" +
+            "City: " + city + "\n" +
+            "Description: " + description;
+        
+        System.out.println(string);
+        return string;
     }
     
 }
