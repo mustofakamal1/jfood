@@ -79,8 +79,11 @@ public class JFood
         c5.setPassword("pas1SA1#Ss");
         //c5.toString();
         
+        
         CashInvoice cas4 = new CashInvoice(1, f4, c5, InvoiceStatus.Finished);
         CashlessInvoice ci4 = new CashlessInvoice(1, f4, c5, InvoiceStatus.Ongoing);
+        cas4.setTotalPrice();
+        ci4.setTotalPrice();
         cas4.toString();
         ci4.toString();
     }
