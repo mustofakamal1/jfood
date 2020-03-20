@@ -173,5 +173,5 @@ public abstract class Invoice
         this.invoiceStatus = invoiceStatus;
     }
     
-    public abstract void printData();
+    public abstract String toString();
 }

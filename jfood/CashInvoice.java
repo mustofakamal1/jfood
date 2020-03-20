@@ -59,19 +59,6 @@ public class CashInvoice extends Invoice
             super.totalPrice = getFood().getPrice();
         }
     }
-    
-    public void printData()
-    {
-        System.out.println("============INVOICE============");
-        System.out.println("ID: " + getId());
-        System.out.println("Food: " + getFood().getName());
-        System.out.println("Date: " + getDate());
-        System.out.println("Customer: " + getCustomer().getName());
-        System.out.println("Delivery Fee: " + deliveryFee);
-        System.out.println("Total Price: " + totalPrice);
-        System.out.println("Status: " + getInvoiceStatus());
-        System.out.println("PaymentType: " + getPaymentType());
-    }
    
     public String toString()
     {

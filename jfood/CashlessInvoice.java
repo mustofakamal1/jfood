@@ -62,9 +62,7 @@ public class CashlessInvoice extends Invoice
             super.totalPrice = getFood().getPrice();
         }
     }
-    
-    public void printData(){}
-    
+
     public String toString()
     {
         String string = "";
