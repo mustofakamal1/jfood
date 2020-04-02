@@ -1,4 +1,6 @@
-import java.util.*; 
+import jdk.jfr.Category;
+
+import java.util.*;
 /**
  * Write a description of class JFood here.
  *
@@ -34,8 +36,8 @@ public class JFood
         //makan1.printData();
         
         //CS Modul 3
-        Location loc3 = new Location("Jakarta Timur", "Jakarta", "Tempat Lahir");
-        Seller sel3 = new Seller(1706043020, "Mustofa Kamal", "mustofa.alhaddad@gmail.com", "085155499891", loc3);
+//        Location loc3 = new Location("Jakarta Timur", "Jakarta", "Tempat Lahir");
+//        Seller sel3 = new Seller(1706043020, "Mustofa Kamal", "mustofa.alhaddad@gmail.com", "085155499891", loc3);
         //Food makan3 = new Food(100, "Sushi", sel3, 1000, FoodCategory.Japanese);
         //makan3.printData();
     
@@ -47,8 +49,8 @@ public class JFood
         
         //Modul 4
         //Customer c4 = new Customer(1, "Andi", "@gmail.com", "Beli", "12-03-2020");
-        Promo p4 = new Promo(1, "CobaNih", 4000, 10000, true);
-        Food f4 = new Food(1, "Martabak", sel3, 15000, FoodCategory.Beverages);
+//        Promo p4 = new Promo(1, "CobaNih", 4000, 10000, true);
+//        Food f4 = new Food(1, "Martabak", sel3, 15000, FoodCategory.Beverages);
         //Food f44 = new Food(2, "Kacang", sel3, 5000, FoodCategory.Beverages);
         // CashlessInvoice ci4 = new CashlessInvoice(1, f4, "12-30-2020", c4, InvoiceStatus.Ongoing);
         // CashlessInvoice ci44 = new CashlessInvoice(1, f4, "12-30-2020", c4, InvoiceStatus.Ongoing, p4);
@@ -68,23 +70,43 @@ public class JFood
         //cas4.printData();
         //cas44.printData();
         //Modul 5
-        Calendar k1 = new GregorianCalendar(2020, 3, 20);
-        Customer c5 = new Customer(1, "Andi", "saya..gmail@gmail.com", "pass1234", k1);
-        Customer c55 = new Customer(2, "saya", "saya.saya@gmail.com", "pas1SA1#Ss", 2020,7,31);
-        Customer c555 = new Customer(3, "Ai", "kamal_&&@gmail.com", "pas9SA-1");
+//        Calendar k1 = new GregorianCalendar(2020, 3, 20);
+//        Customer c5 = new Customer(1, "Andi", "saya..gmail@gmail.com", "pass1234", k1);
+//        Customer c55 = new Customer(2, "saya", "saya.saya@gmail.com", "pas1SA1#Ss", 2020,7,31);
+//        Customer c555 = new Customer(3, "Ai", "kamal_&&@gmail.com", "pas9SA-1");
         //System.out.println(c5.toString());
         //System.out.println(c55.toString());
         //System.out.println(c555.toString());
-        c5.setEmail("test@google.com");
-        c5.setPassword("pas1SA1#Ss");
+//        c5.setEmail("test@google.com");
+//        c5.setPassword("pas1SA1#Ss");
         //System.out.println(c5.toString());
         
         
-        Invoice cas4 = new CashInvoice(1, f4, c5, InvoiceStatus.Finished);
-        Invoice ci4 = new CashlessInvoice(1, f4, c5, InvoiceStatus.Ongoing, p4);
-        cas4.setTotalPrice();
-        ci4.setTotalPrice();
-        System.out.println(cas4.toString());
-        System.out.println(ci4.toString());
+//        Invoice cas4 = new CashInvoice(1, f4, c5, InvoiceStatus.Finished);
+//        Invoice ci4 = new CashlessInvoice(1, f4, c5, InvoiceStatus.Ongoing, p4);
+//        cas4.setTotalPrice();
+//        ci4.setTotalPrice();
+//        System.out.println(cas4.toString());
+//        System.out.println(ci4.toString());
+
+        //Modul 6
+        Location loc6 = new Location("Jakarta Timur", "Jakarta", "Rumah");
+//        DatabaseSeller.addSeller(new Seller(DatabaseSeller.getLastId(), "Mulya",
+//                "mulya@gmail.com", "0812345678", loc6));
+        DatabaseCustomer.addCustomer(new Customer(DatabaseCustomer.getLastId(), "Mustofa Kamal",
+                "mustofa.kamal71@ui.ac.id", "pass1234"));
+        DatabaseCustomer.addCustomer(new Customer(DatabaseCustomer.getLastId(), "Mustofa Kamal",
+                "mustofa.kamal71@ui.ac.id", "pass1434"));
+        DatabaseCustomer.addCustomer(new Customer(DatabaseCustomer.getLastId(), "Djati Pradana",
+                "djati.pradana@ui.ac.id", "djati1234"));
+        System.out.println(DatabaseCustomer.getCustomerDatabase());
+        DatabaseFood.addFood(new Food(DatabaseFood.getLastId(), "Vit-C", DatabaseSeller.getSellerById(1), 50000,
+                FoodCategory.Snacks));
+        DatabaseFood.addFood(new Food(DatabaseFood.getLastId(), "Vit-A", DatabaseSeller.getSellerById(1), 20000,
+                FoodCategory.Snacks));
+        DatabaseFood.addFood(new Food(DatabaseFood.getLastId(), "Mineral Water", DatabaseSeller.getSellerById(1), 4000,
+                FoodCategory.Coffee));
+        System.out.println(DatabaseFood.getFoodByCategory(FoodCategory.Snacks));
+        System.out.println(DatabaseFood.getFoodByCategory(FoodCategory.Coffee));
     }
 }

@@ -1,5 +1,6 @@
-import java.text.SimpleDateFormat;  
-import java.util.Date; 
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Date;
 /**
  * Write a description of class CashInvoice here.
  *
@@ -14,16 +15,15 @@ public class CashInvoice extends Invoice
     /**
      * Constructor for objects of class CashInvoice
      */
-    public CashInvoice(int id, Food food, Customer customer,
-    InvoiceStatus invoiceStatus)
+    public CashInvoice(int id, ArrayList<Food> foods, Customer customer)
     {
-        super(id, food, customer, invoiceStatus);
+        super(id, foods, customer);
     }
     
-    public CashInvoice(int id, Food food, Customer customer,
-    InvoiceStatus invoiceStatus, int deliveryFee)
+    public CashInvoice(int id, ArrayList<Food> foods, Customer customer,
+    int deliveryFee)
     {
-        super(id, food, customer, invoiceStatus);
+        super(id, foods, customer);
         this.deliveryFee = deliveryFee;
     }
 
@@ -50,31 +50,36 @@ public class CashInvoice extends Invoice
     
     public void setTotalPrice()
     {
-        if(deliveryFee > 0)
-        {
-            super.totalPrice = getFood().getPrice() + deliveryFee;
-        }
-        else
-        {
-            super.totalPrice = getFood().getPrice();
+        for(Food foods : getFoods()) {
+            if(deliveryFee > 0)
+            {
+                super.totalPrice = foods.getPrice() + deliveryFee;
+            }
+            else
+            {
+                super.totalPrice = foods.getPrice();
+            }
         }
     }
    
     public String toString()
     {
-        Date date = getDate().getTime();
-        SimpleDateFormat formatter = new SimpleDateFormat("dd MMMMM yyyy");
-        String formatted = formatter.format(date);
-        String string =  
-            "============INVOICE============\n"+
-            "ID: " + getId() + "\n" +
-            "Food: " + getFood().getName() + "\n" +
-            "Date:" + date + "\n" +
-            "Customer :" + getCustomer().getName() + "\n" +
-            "Total Price: " + totalPrice + "\n" +
-            "Status: " + getInvoiceStatus() + "\n" +
-            "PaymentType: " + getPaymentType();
-        //System.out.println(string);
-        return string;
+        for(Food foods : getFoods()) {
+
+            Date date = getDate().getTime();
+            SimpleDateFormat formatter = new SimpleDateFormat("dd MMMMM yyyy");
+            String formatted = formatter.format(date);
+            String string =
+                    "============INVOICE============\n" +
+                            "ID: " + getId() + "\n" +
+                            "Food: " + foods.getName() + "\n" +
+                            "Date:" + date + "\n" +
+                            "Customer :" + getCustomer().getName() + "\n" +
+                            "Total Price: " + totalPrice + "\n" +
+                            "PaymentType: " + getPaymentType();
+            //System.out.println(string);
+            return string;
+        }
+        return "";
     }
 }

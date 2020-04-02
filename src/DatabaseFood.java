@@ -1,3 +1,6 @@
+import jdk.jfr.Category;
+
+import java.util.ArrayList;
 
 /**
  * Seller adalah class yang berfungsi memproses informasi semua food di jFood.
@@ -8,7 +11,8 @@
 public class DatabaseFood
 {
     // instance variables - replace the example below with your own
-    private static String[] listFood;
+    private static ArrayList<Food> FOOD_DATABASE;
+    private static int lastId;
 
     /**
      * Constructor for objects of class DatabaseFood.
@@ -16,54 +20,67 @@ public class DatabaseFood
     public DatabaseFood()
     {
         // initialise instance variables
+        FOOD_DATABASE = new ArrayList<Food>();
+        lastId = 0;
     }
 
-    /**
-     * Mengembalikan nilai true untuk menunjukkan method 
-     * dieksekusi hingga selesai.
-     * 
-     * @param food  food pada Class food yang akan diproses di 
-     *              method ini
-     * @return      true yang menunjukkan 1 atau benar
-     */
     public static boolean addFood(Food food)
     {
-       return true;
-    }
-    
-    /**
-     * Mengembalikan nilai true untuk menunjukkan method 
-     * dieksekusi hingga selesai.
-     * 
-     * @param food  food pada Class food yang akan diproses di 
-     *              method ini
-     * @return      true yang menunjukkan 1 atau selesai
-     */
-    public static boolean removeFood(Food food)
-    {
+        FOOD_DATABASE.add(food);
+        lastId = food.getId();
         return true;
     }
-    
-    /**
-     * Mengembalikan nilai null untuk menunjukkan food tidak
-     * tersedia di database makanan. 
-     * 
-     * @param food  food pada Class food yang akan diproses di 
-     *              method ini
-     * @return      null yang menunjukkan kosong atau tidak ada
-     */
-    public static Food getFood()
+
+    public static boolean removeFood(int id)
     {
+        for(Food food : FOOD_DATABASE) {
+            if(food.getId() == id) {
+                FOOD_DATABASE.remove(food);
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public static ArrayList<Food> getFoodDatabase()
+    {
+        return FOOD_DATABASE;
+    }
+
+    public static int getLastId() {
+        return lastId;
+    }
+
+    public static Food getFoodById(int id) {
+        for(Food food : FOOD_DATABASE) {
+            if(food.getId() == id) {
+                return food;
+            }
+        }
         return null;
     }
-    
-    /**
-     * Mengembalikan daftar makanan yang ada di database makanan. 
-     * 
-     * @return      daftar makanan yang ada
-     */
-    public static String[] getListFood()
-    {
-        return listFood;
+
+    public static ArrayList<Food> getFoodBySeller(int sellerId) {
+        ArrayList<Food> foods = new ArrayList<Food>();
+        for(Food food : FOOD_DATABASE) {
+            if(food.getSeller().getId() == sellerId) {
+                foods.add(food);
+                return foods;
+            }
+        }
+        return null;
     }
+
+    public static ArrayList<Food> getFoodByCategory(FoodCategory category) {
+        ArrayList<Food> foods = new ArrayList<Food>();
+        for(Food food : FOOD_DATABASE) {
+            if(food.getCategory() == category) {
+                foods.add(food);
+                return foods;
+            }
+        }
+        return null;
+    }
+
+
 }

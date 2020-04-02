@@ -10,7 +10,7 @@ public abstract class Invoice
 {
     // instance variables - replace the example below with your own
     private int id;
-    private Food food;
+    private ArrayList<Food> foods;
     private Calendar date;
     protected int totalPrice;
     private Customer customer;
@@ -31,17 +31,15 @@ public abstract class Invoice
      *                      class Customer
      * @param totalPrice    total harga pada transaksi
      */
-    public Invoice(int id, Food food, Customer customer,
-    InvoiceStatus invoiceStatus)
+    public Invoice(int id, ArrayList<Food> foods, Customer customer)
     {
         // initialise instance variables
         Calendar now = Calendar.getInstance();
         this.id = id;
-        this.food = food;
-        this.date = date;
+        this.foods = foods;
         this.customer = customer;
-        this.invoiceStatus = invoiceStatus;
         this.date = now;
+        this.invoiceStatus = InvoiceStatus.Ongoing;
     }
 
     /**
@@ -61,9 +59,9 @@ public abstract class Invoice
      * 
      * @return  angka unik makanan dari object Invoice
      */
-    public Food getFood()
+    public ArrayList<Food> getFoods()
     {
-        return food;
+        return foods;
     }
     
     /**
@@ -100,43 +98,24 @@ public abstract class Invoice
     }
     
     public abstract PaymentType getPaymentType();
-    
+
     public InvoiceStatus getInvoiceStatus()
     {
         return invoiceStatus;
     }
     
-    /**
-     * Mengupdate angka unik invoice dari object Invoice yang 
-     * bersangkutan.
-     * 
-     * @param id    angka unik invoice yang akan diupdate ke 
-     *              object
-     */
+
     public void setId(int id)
     {
         this.id = id;
     }
-    
-    /**
-     * Mengupdate angka unik makanan dari object Invoice yang 
-     * bersangkutan.
-     * 
-     * @param idFood    angka unik makanan yang akan diupdate ke 
-     *                  object
-     */
-    public void setFood(Food food)
+
+    public void setFood(ArrayList<Food> foods)
     {
-        this.food = food;
+        this.foods = foods;
     }
     
-    /**
-     * Mengupdate tanggal transaksi dari object Invoice yang 
-     * bersangkutan.
-     * 
-     * @param id    tanggal transaksi yang akan diupdate ke 
-     *              object
-     */
+
     public void setDate(Calendar date)
     {
         this.date = date;
@@ -147,30 +126,12 @@ public abstract class Invoice
         this.date = new GregorianCalendar(year, month-1, dayOfMonth);;
     }
     
-    /**
-     * Mengupdate total harga transaksi dari object Invoice yang 
-     * bersangkutan.
-     * 
-     * @param id    total harga transaksi yang akan diupdate ke 
-     *              object
-     */
+
     public abstract void setTotalPrice();
-    
-    /**
-     * Mengupdate customer pada Class Customer dari object 
-     * Invoice yang bersangkutan.
-     * 
-     * @param id    customer pada Class Customer yang akan 
-     *              diupdate ke object
-     */
+
     public void setCustomer(Customer customer)
     {
         this.customer = customer;
-    }
-    
-    public void setInvoiceStatus(InvoiceStatus invoiceStatus)
-    {
-        this.invoiceStatus = invoiceStatus;
     }
     
     public abstract String toString();
