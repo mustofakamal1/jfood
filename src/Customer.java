@@ -217,7 +217,7 @@ public class Customer
             "Name: " + name + "\n" +
             "Email:" + email + "\n" +
             "Password :" + password + "\n" +
-            "joinDate :" + joinDate.toString();
+            "joinDate :" + formatted;
         }
         
         else{
