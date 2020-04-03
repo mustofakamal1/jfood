@@ -1,5 +1,3 @@
-import jdk.jfr.Category;
-
 import java.util.ArrayList;
 
 /**
@@ -8,33 +6,27 @@ import java.util.ArrayList;
  * @author Mustofa Kamal
  * @version 28-02-2020
  */
-public class DatabaseFood
-{
+public class DatabaseFood {
     // instance variables - replace the example below with your own
-    private static ArrayList<Food> FOOD_DATABASE;
-    private static int lastId;
+    private static ArrayList<Food> FOOD_DATABASE = new ArrayList<Food>();
+    private static int lastId = 0;
 
     /**
      * Constructor for objects of class DatabaseFood.
      */
-    public DatabaseFood()
-    {
-        // initialise instance variables
-        FOOD_DATABASE = new ArrayList<Food>();
-        lastId = 0;
+    public DatabaseFood() {
+
     }
 
-    public static boolean addFood(Food food)
-    {
+    public static boolean addFood(Food food) {
         FOOD_DATABASE.add(food);
         lastId = food.getId();
         return true;
     }
 
-    public static boolean removeFood(int id)
-    {
-        for(Food food : FOOD_DATABASE) {
-            if(food.getId() == id) {
+    public static boolean removeFood(int id) {
+        for (Food food : FOOD_DATABASE) {
+            if (food.getId() == id) {
                 FOOD_DATABASE.remove(food);
                 return true;
             }
@@ -42,8 +34,7 @@ public class DatabaseFood
         return false;
     }
 
-    public static ArrayList<Food> getFoodDatabase()
-    {
+    public static ArrayList<Food> getFoodDatabase() {
         return FOOD_DATABASE;
     }
 
@@ -52,8 +43,8 @@ public class DatabaseFood
     }
 
     public static Food getFoodById(int id) {
-        for(Food food : FOOD_DATABASE) {
-            if(food.getId() == id) {
+        for (Food food : FOOD_DATABASE) {
+            if (food.getId() == id) {
                 return food;
             }
         }
@@ -62,8 +53,8 @@ public class DatabaseFood
 
     public static ArrayList<Food> getFoodBySeller(int sellerId) {
         ArrayList<Food> foods = new ArrayList<Food>();
-        for(Food food : FOOD_DATABASE) {
-            if(food.getSeller().getId() == sellerId) {
+        for (Food food : FOOD_DATABASE) {
+            if (food.getSeller().getId() == sellerId) {
                 foods.add(food);
                 return foods;
             }
@@ -73,13 +64,12 @@ public class DatabaseFood
 
     public static ArrayList<Food> getFoodByCategory(FoodCategory category) {
         ArrayList<Food> foods = new ArrayList<Food>();
-        for(Food food : FOOD_DATABASE) {
-            if(food.getCategory() == category) {
+        for (Food food : FOOD_DATABASE) {
+            if (food.getCategory().equals(category)) {
                 foods.add(food);
-                return foods;
             }
         }
-        return null;
+        return foods;
     }
 
 

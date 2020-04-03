@@ -1,14 +1,14 @@
-import java.text.SimpleDateFormat;  
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
-import java.util.*; 
+
 /**
  * Write a description of class CashlessInvoice here.
  *
  * @author (your name)
  * @version (a version number or a date)
  */
-public class CashlessInvoice extends Invoice
-{
+public class CashlessInvoice extends Invoice {
     // instance variables - replace the example below with your own
     private static final PaymentType PAYMENT_TYPE = PaymentType.Cashless;
     private Promo promo;
@@ -16,55 +16,46 @@ public class CashlessInvoice extends Invoice
     /**
      * Constructor for objects of class CashlessInvoice
      */
-    public CashlessInvoice(int id, ArrayList<Food> foods, Customer customer)
-    {
+    public CashlessInvoice(int id, ArrayList<Food> foods, Customer customer) {
         super(id, foods, customer);
     }
-    
+
     public CashlessInvoice(int id, ArrayList<Food> foods, Customer customer,
-    Promo promo)
-    {
+                           Promo promo) {
         super(id, foods, customer);
         this.promo = promo;
     }
 
-    public PaymentType getPaymentType()
-    {
+    public PaymentType getPaymentType() {
         return PAYMENT_TYPE;
     }
-    
-    public Promo getPromo()
-    {
+
+    public Promo getPromo() {
         return promo;
     }
-    
-    public void setPromo(Promo promo)
-    {
+
+    public void setPromo(Promo promo) {
         this.promo = promo;
     }
-    
-    public void setTotalPrice()
-    {
-        for(Food foods : getFoods()) {
-            if(promo != null && promo.getActive() && foods.getPrice() > promo.getMinPrice()) {
+
+    public void setTotalPrice() {
+        for (Food foods : getFoods()) {
+            if (promo != null && promo.getActive() && foods.getPrice() > promo.getMinPrice()) {
                 super.totalPrice = foods.getPrice() - promo.getDiscount();
-            }
-            else
-            {
+            } else {
                 super.totalPrice = foods.getPrice();
             }
         }
     }
 
-    public String toString()
-    {
-        for(Food foods : getFoods()) {
-            if(!(getPromo() == null || !promo.getActive() || foods.getPrice() < promo.getMinPrice())) {
+    public String toString() {
+        for (Food foods : getFoods()) {
+            if (!(getPromo() == null || !promo.getActive() || foods.getPrice() < promo.getMinPrice())) {
                 Date date = getDate().getTime();
                 SimpleDateFormat formatter = new SimpleDateFormat("dd MMMMM yyyy");
                 String formatted = formatter.format(date);
                 return
-                        "============INVOICE============\n"+
+                        "============INVOICE============\n" +
                                 "ID: " + getId() + "\n" +
                                 "Food: " + foods.getName() + "\n" +
                                 "Date:" + formatted + "\n" +
@@ -73,13 +64,12 @@ public class CashlessInvoice extends Invoice
                                 "Total Price: " + totalPrice + "\n" +
                                 "PaymentType: " + getPaymentType();
 
-            }
-            else {
+            } else {
                 Date date = getDate().getTime();
                 SimpleDateFormat formatter = new SimpleDateFormat("dd MMMMM yyyy");
                 String formatted = formatter.format(date);
                 return
-                        "============INVOICE============\n"+
+                        "============INVOICE============\n" +
                                 "ID: " + getId() + "\n" +
                                 "Food: " + foods.getName() + "\n" +
                                 "Date:" + formatted + "\n" +

@@ -1,4 +1,3 @@
-import java.lang.ref.PhantomReference;
 import java.util.ArrayList;
 
 /**
@@ -7,8 +6,7 @@ import java.util.ArrayList;
  * @author (your name)
  * @version (a version number or a date)
  */
-public class DatabasePromo
-{
+public class DatabasePromo {
     // instance variables - replace the example below with your own
     private static ArrayList<Promo> PROMO_DATABASE;
     private static int lastId;
@@ -16,61 +14,12 @@ public class DatabasePromo
     /**
      * Constructor for objects of class DatabasePromo
      */
-    public DatabasePromo()
-    {
+    public DatabasePromo() {
         PROMO_DATABASE = new ArrayList<Promo>();
         lastId = 0;
     }
 
-    public boolean addPromo(Promo promo)
-    {
-        for(Promo promos : PROMO_DATABASE) {
-            if(promos.getCode() == promo.getCode()) {
-                return false;
-            }
-        }
-        PROMO_DATABASE.add(promo);
-        lastId = promo.getId();
-        return true;
-    }
-    
-    public boolean removePromo(int id)
-    {
-        for(Promo promo : PROMO_DATABASE) {
-            if(promo.getId() == id) {
-                PROMO_DATABASE.remove(promo);
-                return true;
-            }
-        }
-        return false;
-    }
-
-    public boolean activatePromo(int id)
-    {
-        for(Promo promo : PROMO_DATABASE) {
-            if(promo.getId() == id) {
-                promo.setActive(true);
-                PROMO_DATABASE.set(PROMO_DATABASE.indexOf(promo), promo);
-                return true;
-            }
-        }
-        return false;
-    }
-
-    public boolean deactivatePromo(int id)
-    {
-        for(Promo promo : PROMO_DATABASE) {
-            if(promo.getId() == id) {
-                promo.setActive(false);
-                PROMO_DATABASE.set(PROMO_DATABASE.indexOf(promo), promo);
-                return true;
-            }
-        }
-        return false;
-    }
-
-    public static ArrayList<Promo> getPromoDatabase()
-    {
+    public static ArrayList<Promo> getPromoDatabase() {
         return PROMO_DATABASE;
     }
 
@@ -79,8 +28,8 @@ public class DatabasePromo
     }
 
     public static Promo getPromoById(int id) {
-        for(Promo promo : PROMO_DATABASE) {
-            if(promo.getId() == id) {
+        for (Promo promo : PROMO_DATABASE) {
+            if (promo.getId() == id) {
                 return promo;
             }
         }
@@ -88,11 +37,54 @@ public class DatabasePromo
     }
 
     public static Promo getPromoByCode(String code) {
-        for(Promo promo : PROMO_DATABASE) {
-            if(promo.getCode() == code) {
+        for (Promo promo : PROMO_DATABASE) {
+            if (promo.getCode().equals(code)) {
                 return promo;
             }
         }
         return null;
+    }
+
+    public boolean addPromo(Promo promo) {
+        for (Promo promos : PROMO_DATABASE) {
+            if (promos.getCode().equals(promo.getCode())) {
+                return false;
+            }
+        }
+        PROMO_DATABASE.add(promo);
+        lastId = promo.getId();
+        return true;
+    }
+
+    public boolean removePromo(int id) {
+        for (Promo promo : PROMO_DATABASE) {
+            if (promo.getId() == id) {
+                PROMO_DATABASE.remove(promo);
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public boolean activatePromo(int id) {
+        for (Promo promo : PROMO_DATABASE) {
+            if (promo.getId() == id) {
+                promo.setActive(true);
+                PROMO_DATABASE.set(PROMO_DATABASE.indexOf(promo), promo);
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public boolean deactivatePromo(int id) {
+        for (Promo promo : PROMO_DATABASE) {
+            if (promo.getId() == id) {
+                promo.setActive(false);
+                PROMO_DATABASE.set(PROMO_DATABASE.indexOf(promo), promo);
+                return true;
+            }
+        }
+        return false;
     }
 }
