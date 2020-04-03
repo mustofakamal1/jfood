@@ -109,5 +109,8 @@ public class JFood {
         for (Food food : DatabaseFood.getFoodByCategory(FoodCategory.Coffee)) {
             System.out.println(food + "\n");
         }
+        DatabasePromo.addPromo(new Promo(DatabasePromo.getLastId()+1, "ABCSD", 3000, 10000, false);
+        DatabasePromo.addPromo(new Promo(DatabasePromo.getLastId()+1, "ABCSD", 1000, 1000, true);
+
     }
 }

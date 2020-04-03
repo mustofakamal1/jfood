@@ -111,6 +111,10 @@ public abstract class Invoice {
         return invoiceStatus;
     }
 
+    public void setInvoiceStatus(InvoiceStatus invoiceStatus) {
+        this.invoiceStatus = invoiceStatus;
+    }
+
     public void setFood(ArrayList<Food> foods) {
         this.foods = foods;
     }

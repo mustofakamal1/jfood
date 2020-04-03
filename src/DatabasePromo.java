@@ -8,15 +8,14 @@ import java.util.ArrayList;
  */
 public class DatabasePromo {
     // instance variables - replace the example below with your own
-    private static ArrayList<Promo> PROMO_DATABASE;
-    private static int lastId;
+    private static ArrayList<Promo> PROMO_DATABASE = new ArrayList<>();
+    private static int lastId = 0;
 
     /**
      * Constructor for objects of class DatabasePromo
      */
     public DatabasePromo() {
-        PROMO_DATABASE = new ArrayList<Promo>();
-        lastId = 0;
+
     }
 
     public static ArrayList<Promo> getPromoDatabase() {
@@ -45,7 +44,7 @@ public class DatabasePromo {
         return null;
     }
 
-    public boolean addPromo(Promo promo) {
+    public static boolean addPromo(Promo promo) {
         for (Promo promos : PROMO_DATABASE) {
             if (promos.getCode().equals(promo.getCode())) {
                 return false;
@@ -56,7 +55,7 @@ public class DatabasePromo {
         return true;
     }
 
-    public boolean removePromo(int id) {
+    public static boolean removePromo(int id) {
         for (Promo promo : PROMO_DATABASE) {
             if (promo.getId() == id) {
                 PROMO_DATABASE.remove(promo);
@@ -66,7 +65,7 @@ public class DatabasePromo {
         return false;
     }
 
-    public boolean activatePromo(int id) {
+    public static boolean activatePromo(int id) {
         for (Promo promo : PROMO_DATABASE) {
             if (promo.getId() == id) {
                 promo.setActive(true);

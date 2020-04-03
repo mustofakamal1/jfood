@@ -63,7 +63,7 @@ public class DatabaseFood {
     }
 
     public static ArrayList<Food> getFoodByCategory(FoodCategory category) {
-        ArrayList<Food> foods = new ArrayList<Food>();
+        ArrayList<Food> foods = new ArrayList<>();
         for (Food food : FOOD_DATABASE) {
             if (food.getCategory().equals(category)) {
                 foods.add(food);
