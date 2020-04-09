@@ -48,12 +48,10 @@ public class DatabaseInvoice {
         return null;
     }
 
-    public boolean addInvoice(Invoice invoice) {
+    public static boolean addInvoice(Invoice invoice) {
         for (Invoice invoices : INVOICE_DATABASE) {
-            if (invoices.getCustomer().equals(invoice.getCustomer())) {
-                if(invoices.getInvoiceStatus().equals(InvoiceStatus.Ongoing)){
-                    return false;
-                }
+            if (invoices.getCustomer().equals(invoice.getCustomer()) && invoices.getInvoiceStatus().equals(InvoiceStatus.Ongoing)) {
+                return false;
             }
         }
         INVOICE_DATABASE.add(invoice);
@@ -61,7 +59,7 @@ public class DatabaseInvoice {
         return true;
     }
 
-    public boolean removeInvoice(int id) {
+    public static boolean removeInvoice(int id) {
         for (Invoice invoice : INVOICE_DATABASE) {
             if (invoice.getId() == id) {
                 INVOICE_DATABASE.remove(invoice);
@@ -71,7 +69,7 @@ public class DatabaseInvoice {
         return false;
     }
 
-    public boolean changeInvoiceStatus(int id, InvoiceStatus invoiceStatus) {
+    public static boolean changeInvoiceStatus(int id, InvoiceStatus invoiceStatus) {
         for (Invoice invoice : INVOICE_DATABASE) {
             if (invoice.getId() == id) {
                 if(invoice.getInvoiceStatus().equals(InvoiceStatus.Ongoing)){
