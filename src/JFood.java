@@ -275,7 +275,6 @@ public class JFood {
         } catch (OngoingInvoiceAlreadyExistsException exp2) {
             System.out.println(exp2.getMessage());
         }
-
         try {
             DatabaseInvoice.removeInvoice(100);
         } catch (InvoiceNotFoundException exp) {
