@@ -14,18 +14,17 @@ public class CustomerController {
 
     @RequestMapping("/{id}")
     public Customer getCustomerById(@PathVariable int id) {
-        Customer customer = null;
         try {
-            customer = DatabaseCustomer.getCustomerById(id);
+            Customer customer = DatabaseCustomer.getCustomerById(id);
+            return customer;
         } catch (CustomerNotFoundException e) {
             e.getMessage();
             return null;
         }
-        return customer;
     }
 
-    @RequestMapping(value = "", method = RequestMethod.POST)
-    public Customer addCustomer(@RequestParam(value="name") String name,
+    @RequestMapping(value = "/register", method = RequestMethod.POST)
+    public Customer registerCustomer(@RequestParam(value="name") String name,
                                 @RequestParam(value="email") String email,
                                 @RequestParam(value="password") String password)
     {
@@ -34,6 +33,19 @@ public class CustomerController {
             DatabaseCustomer.addCustomer(customer);
         } catch (EmailAlreadyExistsException e) {
             e.getMessage();
+            return null;
+        }
+        return customer;
+    }
+
+    @RequestMapping(value = "/login", method = RequestMethod.POST)
+    public Customer loginCustomer(
+                                     @RequestParam(value="email") String email,
+                                     @RequestParam(value="password") String password)
+    {
+
+        Customer customer = DatabaseCustomer.customerLogin(email, password);
+        if(customer == null) {
             return null;
         }
         return customer;

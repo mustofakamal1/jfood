@@ -24,6 +24,15 @@ public class DatabaseCustomer {
      *
      * @return the sum of x and y
      */
+    public static Customer customerLogin(String email, String password) {
+        for (Customer customer : CUSTOMER_DATABASE) {
+            if (customer.getEmail().equals(email) && customer.getPassword().equals(password)) {
+                return customer;
+            }
+        }
+        return null;
+    }
+
     public static boolean addCustomer(Customer customer) throws EmailAlreadyExistsException {
         for (Customer customers : CUSTOMER_DATABASE) {
             if (customers.getEmail().equals(customer.getEmail())) {
