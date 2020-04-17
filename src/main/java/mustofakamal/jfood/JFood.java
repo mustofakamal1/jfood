@@ -28,6 +28,5 @@ public class JFood {
         DatabaseFood.addFood(food4);
         SpringApplication.run(JFood.class, args);
     }
-
 }
 

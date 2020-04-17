@@ -20,7 +20,7 @@ public class SellerController {
             Seller seller = DatabaseSeller.getSellerById(id);
             return seller;
         } catch (SellerNotFoundException e) {
-            e.getMessage();
+            System.out.println(e.getMessage());
             return null;
         }
     }

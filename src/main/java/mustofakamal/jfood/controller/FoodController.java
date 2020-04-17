@@ -47,7 +47,7 @@ public class FoodController {
             DatabaseFood.addFood(food);
             return food;
         } catch (SellerNotFoundException e) {
-            e.getMessage();
+            System.out.println(e.getMessage());
             return null;
         }
     }

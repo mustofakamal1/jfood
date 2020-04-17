@@ -18,7 +18,7 @@ public class CustomerController {
             Customer customer = DatabaseCustomer.getCustomerById(id);
             return customer;
         } catch (CustomerNotFoundException e) {
-            e.getMessage();
+            System.out.println(e.getMessage());
             return null;
         }
     }
@@ -32,7 +32,7 @@ public class CustomerController {
         try {
             DatabaseCustomer.addCustomer(customer);
         } catch (EmailAlreadyExistsException e) {
-            e.getMessage();
+            System.out.println(e.getMessage());
             return null;
         }
         return customer;

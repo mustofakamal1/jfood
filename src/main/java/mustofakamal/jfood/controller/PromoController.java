@@ -30,7 +30,7 @@ public class PromoController {
             DatabasePromo.addPromo(promo);
             return promo;
         } catch (PromoCodeAlreadyExistsException e) {
-            e.getMessage();
+            System.out.println(e.getMessage());
             return null;
         }
     }
