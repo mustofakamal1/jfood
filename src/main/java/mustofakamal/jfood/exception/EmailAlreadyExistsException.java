@@ -2,6 +2,13 @@ package mustofakamal.jfood.exception;
 
 import mustofakamal.jfood.structure.model.Customer;
 
+/**
+ * Class EmailAlreadyExistsException adalah class yang berfungsi
+ * memberikan peringatan ketika email sudah terdapat pada sistem.
+ *
+ * @author Mustofa Kamal
+ * @version 07-06-2020
+ */
 public class EmailAlreadyExistsException extends Exception {
 
     private Customer customer_error;

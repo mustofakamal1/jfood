@@ -10,6 +10,13 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
 
+/**
+ * Class SellerController adalah class yang berfungsi
+ * menyediakan REST API untuk CRUD data objek food.
+ *
+ * @author Mustofa Kamal
+ * @version 07-06-2020
+ */
 @RequestMapping("/food")
 @RestController
 public class FoodController {

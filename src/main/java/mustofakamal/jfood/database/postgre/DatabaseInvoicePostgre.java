@@ -14,6 +14,13 @@ import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.*;
 
+/**
+ * Class DatabaseCustomerPostgre adalah class yang memproses
+ * kumpulan data seluruh objek invoice.
+ *
+ * @author Mustofa Kamal
+ * @version 07-06-2020
+ */
 public class DatabaseInvoicePostgre {
 
     public static boolean insertCashlessInvoice(CashlessInvoice invoice) throws OngoingInvoiceAlreadyExistsException {

@@ -1,4 +1,12 @@
 package mustofakamal.jfood.exception;
+
+/**
+ * Class PromoNotFoundExecption adalah class yang berfungsi
+ * memberikan peringatan promo tidak ditemukan.
+ *
+ * @author Mustofa Kamal
+ * @version 07-06-2020
+ */
 public class PromoNotFoundExecption extends Exception {
 
     private int promo_error;

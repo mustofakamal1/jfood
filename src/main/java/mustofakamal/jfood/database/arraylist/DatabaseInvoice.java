@@ -7,11 +7,16 @@ import mustofakamal.jfood.exception.OngoingInvoiceAlreadyExistsException;
 import java.util.ArrayList;
 
 /**
- * Write a description of class DatabaseInvoice here.
+ * Class DatabaseCustomer adalah class yang memproses
+ * kumpulan data seluruh objek invoice.
  *
- * @author (your name)
- * @version (a version number or a date)
+ * @author Mustofa Kamal
+ * @version 07-06-2020
+ *
+ * @deprecated beralih ke database postgre
+ * @see mustofakamal.jfood.database.postgre.DatabaseInvoicePostgre
  */
+@Deprecated
 public class DatabaseInvoice {
     // instance variables - replace the example below with your own
     private static ArrayList<Invoice> INVOICE_DATABASE = new ArrayList<>();

@@ -3,7 +3,7 @@ package mustofakamal.jfood.structure.model;
  * Seller adalah class yang berfungsi memproses informasi location di jFood.
  *
  * @author Mustofa Kamal
- * @version 28-02-2020
+ * @version 07-06-2020
  */
 public class Location {
     // instance variables - replace the example below with your own
@@ -15,16 +15,14 @@ public class Location {
     /**
      * Constructor for objects of class Location.
      * <p>
-     * Mengupdate id, name, email, phoneNumber, dan joinDate
-     * pada object baru seller dengan nilai yang dimasukkan.
+     * Mengupdate id, city, province, dan description
+     * pada object baru Location dengan nilai yang dimasukkan.
      *
-     * @param id          angka unik yang dimiliki setiap seller
-     *                    sebagai identifier
-     * @param name        nama dari seller
-     * @param email       alamat email dari seller
-     * @param phoneNumber nomor telepon yang dimiliki seller
-     * @param location    lokasi dari seller yang diambil dari
-     *                    salah satu object dari class location
+     * @param id            angka unik yang dimiliki setiap seller
+     *                      sebagai identifier
+     * @param city          nama dari kota
+     * @param province      nama dari provinsi
+     * @param description   deskripsi mengenai lokasi
      */
     public Location(int id, String city, String province, String description) {
         // initialise instance variables
@@ -34,6 +32,11 @@ public class Location {
         this.description = description;
     }
 
+    /**
+     * Mengembalikan angka unik (id) objek Location
+     *
+     * @return angka unik (id) identitas object location
+     */
     public int getId() {
         return id;
     }
@@ -104,9 +107,17 @@ public class Location {
         this.description = description;
     }
 
+    /**
+     * Mengembalikan beberapa informasi Location yang bersangkutan
+     * meliputi id, province, city, dan description.
+     *
+     * @return string informasi promo
+     *
+     */
     public String toString() {
         return
                 "===========LOCATION============\n" +
+                        "id : " + id + "\n" +
                         "Province: " + province + "\n" +
                         "City: " + city + "\n" +
                         "Description: " + description;

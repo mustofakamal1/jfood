@@ -12,6 +12,13 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.GregorianCalendar;
 
+/**
+ * Class DatabaseCustomerPostgre adalah class yang memproses
+ * kumpulan data seluruh objek customer.
+ *
+ * @author Mustofa Kamal
+ * @version 07-06-2020
+ */
 public class DatabaseCustomerPostgre {
     public static boolean insertCustomer(Customer customer) throws EmailAlreadyExistsException {
         Connection c = null;

@@ -4,6 +4,13 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.Statement;
 
+/**
+ * Class DatabaseConnectionPostgre adalah class yang berfungsi
+ * membuat konkesi ke database postgreSQL.
+ *
+ * @author Mustofa Kamal
+ * @version 07-06-2020
+ */
 public class DatabaseConnectionPostgre {
     public static Connection connection(){
         Connection c = null;

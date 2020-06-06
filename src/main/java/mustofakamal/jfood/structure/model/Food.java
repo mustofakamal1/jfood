@@ -7,7 +7,7 @@ import mustofakamal.jfood.structure.type.FoodCategory;
  * di jFood.
  *
  * @author Mustofa Kamal
- * @version 28-02-2020
+ * @version 07-06-2020
  */
 public class Food {
     // instance variables - replace the example below with your own
@@ -74,7 +74,7 @@ public class Food {
      * Mengupdate nama dari object Food yang
      * bersangkutan.
      *
-     * @param nama makanan yang akan diupdate ke object
+     * @param name makanan yang akan diupdate ke object
      */
     public void setName(String name) {
         this.name = name;
@@ -115,7 +115,7 @@ public class Food {
      * Mengupdate harga dari object Food yang
      * bersangkutan.
      *
-     * @param harga makanan yang akan diupdate ke object
+     * @param price harga makanan yang akan diupdate ke object
      */
     public void setPrice(int price) {
         this.price = price;

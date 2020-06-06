@@ -6,11 +6,16 @@ import mustofakamal.jfood.exception.PromoNotFoundExecption;
 import java.util.ArrayList;
 
 /**
- * Write a description of class DatabasePromo here.
+ * Class DatabaseCustomer adalah class yang memproses
+ * kumpulan data seluruh objek promo.
  *
- * @author (your name)
- * @version (a version number or a date)
+ * @author Mustofa Kamal
+ * @version 07-06-2020
+ *
+ * @deprecated beralih ke database postgre
+ * @see mustofakamal.jfood.database.postgre.DatabasePromoPostgre
  */
+@Deprecated
 public class DatabasePromo {
     // instance variables - replace the example below with your own
     private static ArrayList<Promo> PROMO_DATABASE = new ArrayList<>();

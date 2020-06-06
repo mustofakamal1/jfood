@@ -10,6 +10,13 @@ import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.ArrayList;
 
+/**
+ * Class DatabaseCustomerPostgre adalah class yang memproses
+ * kumpulan data seluruh objek food.
+ *
+ * @author Mustofa Kamal
+ * @version 07-06-2020
+ */
 public class DatabaseFoodPostgre {
     public static boolean insertFood(Food food) {
         Connection c = null;

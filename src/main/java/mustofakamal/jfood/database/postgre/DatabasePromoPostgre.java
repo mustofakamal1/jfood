@@ -9,6 +9,13 @@ import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.ArrayList;
 
+/**
+ * Class DatabaseCustomerPostgre adalah class yang memproses
+ * kumpulan data seluruh objek promo.
+ *
+ * @author Mustofa Kamal
+ * @version 07-06-2020
+ */
 public class DatabasePromoPostgre {
     public static boolean insertPromo(Promo promo) throws PromoCodeAlreadyExistsException {
         Connection c = null;

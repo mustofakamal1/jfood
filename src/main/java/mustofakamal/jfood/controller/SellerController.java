@@ -1,14 +1,21 @@
 package mustofakamal.jfood.controller;
 
-        import mustofakamal.jfood.database.postgre.DatabaseLocationPostgre;
-        import mustofakamal.jfood.database.postgre.DatabaseSellerPostgre;
-        import mustofakamal.jfood.exception.SellerNotFoundException;
-        import mustofakamal.jfood.structure.model.Location;
-        import mustofakamal.jfood.structure.model.Seller;
-        import org.springframework.web.bind.annotation.*;
+import mustofakamal.jfood.database.postgre.DatabaseLocationPostgre;
+import mustofakamal.jfood.database.postgre.DatabaseSellerPostgre;
+import mustofakamal.jfood.exception.SellerNotFoundException;
+import mustofakamal.jfood.structure.model.Location;
+import mustofakamal.jfood.structure.model.Seller;
+import org.springframework.web.bind.annotation.*;
 
-        import java.util.ArrayList;
+import java.util.ArrayList;
 
+/**
+ * Class SellerController adalah class yang berfungsi
+ * menyediakan REST API untuk CRUD data objek seller.
+ *
+ * @author Mustofa Kamal
+ * @version 07-06-2020
+ */
 @RequestMapping("/seller")
 @RestController
 public class SellerController {

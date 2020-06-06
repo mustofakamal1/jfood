@@ -1,4 +1,12 @@
 package mustofakamal.jfood.exception;
+
+/**
+ * Class CustomerNotFoundException adalah class yang berfungsi
+ * memberikan peringatan customer tidak ditemukan.
+ *
+ * @author Mustofa Kamal
+ * @version 07-06-2020
+ */
 public class CustomerNotFoundException extends Exception {
 
     private int customer_error;

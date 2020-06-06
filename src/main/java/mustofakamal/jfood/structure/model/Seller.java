@@ -1,9 +1,9 @@
 package mustofakamal.jfood.structure.model;
 /**
- * Seller adalah class yang berfungsi memproses informasi seller di jFood.
+ * Class Seller adalah class yang berfungsi memproses informasi seller di jFood.
  *
  * @author Mustofa Kamal
- * @version 28-02-2020
+ * @version 07-06-2020
  */
 public class Seller {
     // instance variables - replace the example below with your own
@@ -16,7 +16,7 @@ public class Seller {
     /**
      * Constructor for objects of class Seller.
      * <p>
-     * Mengupdate id, name, email, phoneNumber, dan joinDate
+     * Mengupdate id, name, email, phoneNumber, dan object location
      * pada object baru seller dengan nilai yang dimasukkan.
      *
      * @param id          angka unik yang dimiliki setiap seller
@@ -26,6 +26,7 @@ public class Seller {
      * @param phoneNumber nomor telepon yang dimiliki seller
      * @param location    lokasi dari seller yang diambil dari
      *                    salah satu object dari class locations
+     * @see Location
      */
     public Seller(int id, String name, String email, String phoneNumber, Location location) {
         // initialise instance variables
@@ -52,7 +53,8 @@ public class Seller {
      * bersangkutan.
      *
      * @param id angka unik seller yang akan diupdate ke
-     *           object
+     *           object seller
+     *
      */
     public void setId(int id) {
         this.id = id;
@@ -141,6 +143,14 @@ public class Seller {
     public void setLocation(Location location) {
         this.location = location;
     }
+
+    /**
+     * Mengembalikan beberapa informasi Seller yang bersangkutan
+     * meliputi id, nama, no telepon, dan object lokasi.
+     *
+     * @return string informasi seller
+     *
+     */
 
     public String toString() {
         return

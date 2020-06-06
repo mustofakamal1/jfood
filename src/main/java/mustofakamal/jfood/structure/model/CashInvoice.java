@@ -6,10 +6,10 @@ import java.util.ArrayList;
 import java.util.Date;
 
 /**
- * Write a description of class CashInvoice here.
+ * Class CashInvoice adalah class yang berfungsi memproses informasi cash invoice di jFood.
  *
- * @author (your name)
- * @version (a version number or a date)
+ * @author Mustofa Kamal
+ * @version 07-06-2020
  */
 public class CashInvoice extends Invoice {
     // instance variables - replace the example below with your own

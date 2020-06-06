@@ -4,13 +4,17 @@ import mustofakamal.jfood.structure.type.FoodCategory;
 import mustofakamal.jfood.exception.FoodNotFoundException;
 
 import java.util.ArrayList;
-
 /**
- * Seller adalah class yang berfungsi memproses informasi semua food di jFood.
+ * Class DatabaseCustomer adalah class yang memproses
+ * kumpulan data seluruh objek food.
  *
  * @author Mustofa Kamal
- * @version 28-02-2020
+ * @version 07-06-2020
+ *
+ * @deprecated beralih ke database postgre
+ * @see mustofakamal.jfood.database.postgre.DatabaseFoodPostgre
  */
+@Deprecated
 public class DatabaseFood {
     // instance variables - replace the example below with your own
     private static ArrayList<Food> FOOD_DATABASE = new ArrayList<Food>();

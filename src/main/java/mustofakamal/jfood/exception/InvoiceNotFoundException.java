@@ -1,4 +1,12 @@
 package mustofakamal.jfood.exception;
+
+/**
+ * Class InvoiceNotFoundException adalah class yang berfungsi
+ * memberikan peringatan invoice tidak ditemukan.
+ *
+ * @author Mustofa Kamal
+ * @version 07-06-2020
+ */
 public class InvoiceNotFoundException extends Exception {
 
     private int invoice_error;

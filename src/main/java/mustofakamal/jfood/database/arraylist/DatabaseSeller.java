@@ -5,11 +5,17 @@ import mustofakamal.jfood.exception.SellerNotFoundException;
 import java.util.ArrayList;
 
 /**
- * Write a description of class DatabaseSeller here.
+ /**
+ * Class DatabaseCustomer adalah class yang memproses
+ * kumpulan data seluruh objek seller.
  *
- * @author (your name)
- * @version (a version number or a date)
+ * @author Mustofa Kamal
+ * @version 07-06-2020
+ *
+ * @deprecated beralih ke database postgre
+ * @see mustofakamal.jfood.database.postgre.DatabaseSellerPostgre
  */
+@Deprecated
 public class DatabaseSeller {
     // instance variables - replace the example below with your own
     private static ArrayList<Seller> SELLER_DATABASE = new ArrayList<>(0);

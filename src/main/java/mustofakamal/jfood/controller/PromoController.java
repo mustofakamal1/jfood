@@ -6,6 +6,13 @@ import mustofakamal.jfood.structure.model.Promo;
 import org.springframework.web.bind.annotation.*;
 import java.util.ArrayList;
 
+/**
+ * Class SellerController adalah class yang berfungsi
+ * menyediakan REST API untuk CRUD data objek promo.
+ *
+ * @author Mustofa Kamal
+ * @version 07-06-2020
+ */
 @RequestMapping("/promo")
 @RestController
 public class PromoController {

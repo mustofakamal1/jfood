@@ -1,4 +1,12 @@
 package mustofakamal.jfood.exception;
+
+/**
+ * Class FoodNotFoundException adalah class yang berfungsi
+ * memberikan peringatan food tidak ditemukan.
+ *
+ * @author Mustofa Kamal
+ * @version 07-06-2020
+ */
 public class FoodNotFoundException extends Exception {
 
     private int food_error;

@@ -6,6 +6,13 @@ import mustofakamal.jfood.exception.EmailAlreadyExistsException;
 import mustofakamal.jfood.structure.model.Customer;
 import org.springframework.web.bind.annotation.*;
 
+/**
+ * Class SellerController adalah class yang berfungsi
+ * menyediakan REST API untuk CRUD data objek customer.
+ *
+ * @author Mustofa Kamal
+ * @version 07-06-2020
+ */
 @RequestMapping("/customer")
 @RestController
 public class CustomerController {

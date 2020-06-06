@@ -1,9 +1,9 @@
 package mustofakamal.jfood.structure.type;
 /**
- * Enumeration class PaymentType - write a description of the enum class here
+ * Enumeration class PaymentType adalah enum class yang berfungsi membuat tipe payment di jFood.
  *
- * @author (your name here)
- * @version (version number or date here)
+ * @author Mustofa Kamal
+ * @version 07-06-2020
  */
 public enum PaymentType {
     Cashless("Cashless"), Cash("Cash");

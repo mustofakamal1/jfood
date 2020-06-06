@@ -8,6 +8,13 @@ import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.ArrayList;
 
+/**
+ * Class DatabaseCustomerPostgre adalah class yang memproses
+ * kumpulan data seluruh objek seller.
+ *
+ * @author Mustofa Kamal
+ * @version 07-06-2020
+ */
 public class DatabaseSellerPostgre {
     public static boolean insertSeller(Seller seller) {
         Connection c = null;

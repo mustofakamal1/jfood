@@ -6,11 +6,16 @@ import mustofakamal.jfood.exception.EmailAlreadyExistsException;
 import java.util.ArrayList;
 
 /**
- * Write a description of class DatabaseCustomer here.
+ * Class DatabaseCustomer adalah class yang memproses
+ * kumpulan data seluruh objek customer.
  *
- * @author (your name)
- * @version (a version number or a date)
+ * @author Mustofa Kamal
+ * @version 07-06-2020
+ *
+ * @deprecated beralih ke database postgre
+ * @see mustofakamal.jfood.database.postgre.DatabaseCustomerPostgre
  */
+@Deprecated
 public class DatabaseCustomer {
     // instance variables - replace the example below with your own
     private static ArrayList<Customer> CUSTOMER_DATABASE = new ArrayList<Customer>();

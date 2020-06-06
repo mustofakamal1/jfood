@@ -16,6 +16,13 @@ import mustofakamal.jfood.structure.type.InvoiceStatus;
 import org.springframework.web.bind.annotation.*;
 import java.util.ArrayList;
 
+/**
+ * Class SellerController adalah class yang berfungsi
+ * menyediakan REST API untuk CRUD data objek invoice.
+ *
+ * @author Mustofa Kamal
+ * @version 07-06-2020
+ */
 @RequestMapping("/invoice")
 @RestController
 public class InvoiceController {
