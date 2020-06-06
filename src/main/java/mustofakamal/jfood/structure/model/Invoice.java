@@ -1,4 +1,7 @@
-package mustofakamal.jfood;
+package mustofakamal.jfood.structure.model;
+import mustofakamal.jfood.structure.type.InvoiceStatus;
+import mustofakamal.jfood.structure.type.PaymentType;
+
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
@@ -122,10 +125,12 @@ public abstract class Invoice {
 
     public void setDate(int year, int month, int dayOfMonth) {
         this.date = new GregorianCalendar(year, month - 1, dayOfMonth);
-        ;
+//        ;
     }
 
     public abstract void setTotalPrice();
+
+    public abstract void setTotalPrice(int totalPrice);
 
     public abstract String toString();
 }

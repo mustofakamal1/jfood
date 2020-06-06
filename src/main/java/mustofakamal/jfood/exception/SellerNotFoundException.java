@@ -1,4 +1,4 @@
-package mustofakamal.jfood;
+package mustofakamal.jfood.exception;
 public class SellerNotFoundException extends Exception {
 
     private int seller_error;

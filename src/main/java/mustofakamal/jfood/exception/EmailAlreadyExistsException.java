@@ -1,4 +1,7 @@
-package mustofakamal.jfood;
+package mustofakamal.jfood.exception;
+
+import mustofakamal.jfood.structure.model.Customer;
+
 public class EmailAlreadyExistsException extends Exception {
 
     private Customer customer_error;

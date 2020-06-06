@@ -1,4 +1,7 @@
-package mustofakamal.jfood;
+package mustofakamal.jfood.structure.model;
+
+import mustofakamal.jfood.structure.type.FoodCategory;
+
 /**
  * Seller adalah class yang berfungsi memproses informasi makanan
  * di jFood.

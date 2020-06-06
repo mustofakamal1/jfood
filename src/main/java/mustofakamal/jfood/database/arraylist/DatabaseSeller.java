@@ -1,4 +1,7 @@
-package mustofakamal.jfood;
+package mustofakamal.jfood.database.arraylist;
+import mustofakamal.jfood.structure.model.Seller;
+import mustofakamal.jfood.exception.SellerNotFoundException;
+
 import java.util.ArrayList;
 
 /**

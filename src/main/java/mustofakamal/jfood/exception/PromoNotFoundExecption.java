@@ -1,4 +1,4 @@
-package mustofakamal.jfood;
+package mustofakamal.jfood.exception;
 public class PromoNotFoundExecption extends Exception {
 
     private int promo_error;

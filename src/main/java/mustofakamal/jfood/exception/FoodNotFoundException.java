@@ -1,4 +1,4 @@
-package mustofakamal.jfood;
+package mustofakamal.jfood.exception;
 public class FoodNotFoundException extends Exception {
 
     private int food_error;

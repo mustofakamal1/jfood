@@ -1,4 +1,8 @@
-package mustofakamal.jfood;
+package mustofakamal.jfood.database.arraylist;
+import mustofakamal.jfood.structure.model.Customer;
+import mustofakamal.jfood.exception.CustomerNotFoundException;
+import mustofakamal.jfood.exception.EmailAlreadyExistsException;
+
 import java.util.ArrayList;
 
 /**

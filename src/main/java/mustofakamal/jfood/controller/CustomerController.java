@@ -1,6 +1,9 @@
 package mustofakamal.jfood.controller;
 
-import mustofakamal.jfood.*;
+import mustofakamal.jfood.database.postgre.DatabaseCustomerPostgre;
+import mustofakamal.jfood.exception.CustomerNotFoundException;
+import mustofakamal.jfood.exception.EmailAlreadyExistsException;
+import mustofakamal.jfood.structure.model.Customer;
 import org.springframework.web.bind.annotation.*;
 
 @RequestMapping("/customer")
@@ -15,7 +18,7 @@ public class CustomerController {
     @RequestMapping("/{id}")
     public Customer getCustomerById(@PathVariable int id) {
         try {
-            Customer customer = DatabaseCustomer.getCustomerById(id);
+            Customer customer = DatabaseCustomerPostgre.getCustomer(id);
             return customer;
         } catch (CustomerNotFoundException e) {
             System.out.println(e.getMessage());
@@ -28,9 +31,9 @@ public class CustomerController {
                                 @RequestParam(value="email") String email,
                                 @RequestParam(value="password") String password)
     {
-        Customer customer = new Customer(DatabaseCustomer.getLastId()+1, name, email, password);
+        Customer customer = new Customer(DatabaseCustomerPostgre.getLastCustomerId()+1, name, email, password);
         try {
-            DatabaseCustomer.addCustomer(customer);
+            DatabaseCustomerPostgre.insertCustomer(customer);
         } catch (EmailAlreadyExistsException e) {
             System.out.println(e.getMessage());
             return null;
@@ -44,7 +47,7 @@ public class CustomerController {
                                      @RequestParam(value="password") String password)
     {
 
-        Customer customer = DatabaseCustomer.customerLogin(email, password);
+        Customer customer = DatabaseCustomerPostgre.customerLogin(email, password);
         if(customer == null) {
             return null;
         }

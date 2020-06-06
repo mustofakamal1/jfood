@@ -1,4 +1,4 @@
-package mustofakamal.jfood;
+package mustofakamal.jfood.structure.model;
 /**
  * Write a description of class Promo here.
  *

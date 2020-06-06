@@ -1,4 +1,7 @@
-package mustofakamal.jfood;
+package mustofakamal.jfood.exception;
+
+import mustofakamal.jfood.structure.model.Invoice;
+
 public class OngoingInvoiceAlreadyExistsException extends Exception {
 
     private Invoice invoice_error;
@@ -9,6 +12,7 @@ public class OngoingInvoiceAlreadyExistsException extends Exception {
     }
 
     public String getMessage() {
-        return super.getMessage() + invoice_error.getInvoiceStatus() + " already exists.";
+        return super.getMessage() + "by " + invoice_error.getCustomer().getName() + "dengan id: " +
+                invoice_error.getCustomer().getId() + " already exists.";
     }
 }

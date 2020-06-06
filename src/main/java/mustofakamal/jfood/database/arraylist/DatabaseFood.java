@@ -1,4 +1,8 @@
-package mustofakamal.jfood;
+package mustofakamal.jfood.database.arraylist;
+import mustofakamal.jfood.structure.model.Food;
+import mustofakamal.jfood.structure.type.FoodCategory;
+import mustofakamal.jfood.exception.FoodNotFoundException;
+
 import java.util.ArrayList;
 
 /**

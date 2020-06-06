@@ -1,4 +1,4 @@
-package mustofakamal.jfood;
+package mustofakamal.jfood.structure.type;
 /**
  * Enumeration class FoodCategory - write a description of the enum class here
  *

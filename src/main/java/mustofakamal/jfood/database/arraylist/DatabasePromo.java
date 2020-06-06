@@ -1,4 +1,8 @@
-package mustofakamal.jfood;
+package mustofakamal.jfood.database.arraylist;
+import mustofakamal.jfood.structure.model.Promo;
+import mustofakamal.jfood.exception.PromoCodeAlreadyExistsException;
+import mustofakamal.jfood.exception.PromoNotFoundExecption;
+
 import java.util.ArrayList;
 
 /**

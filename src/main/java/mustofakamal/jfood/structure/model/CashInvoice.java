@@ -1,4 +1,6 @@
-package mustofakamal.jfood;
+package mustofakamal.jfood.structure.model;
+import mustofakamal.jfood.structure.type.PaymentType;
+
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
@@ -42,11 +44,15 @@ public class CashInvoice extends Invoice {
     public void setTotalPrice() {
         for (Food foods : getFoods()) {
             if (deliveryFee > 0) {
-                super.totalPrice = foods.getPrice() + deliveryFee;
+                super.totalPrice = totalPrice + foods.getPrice() + deliveryFee;
             } else {
-                super.totalPrice = foods.getPrice();
+                super.totalPrice = totalPrice + foods.getPrice();
             }
         }
+    }
+
+    public void setTotalPrice(int totalPrice) {
+        super.totalPrice = totalPrice;
     }
 
     public String toString() {

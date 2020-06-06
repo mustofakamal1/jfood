@@ -1,4 +1,4 @@
-package mustofakamal.jfood;
+package mustofakamal.jfood.exception;
 public class CustomerNotFoundException extends Exception {
 
     private int customer_error;

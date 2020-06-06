@@ -1,4 +1,7 @@
-package mustofakamal.jfood;
+package mustofakamal.jfood.threading;
+
+import mustofakamal.jfood.structure.model.Invoice;
+
 public class PriceCalculator implements Runnable {
     private Thread t;
     private Invoice invoice;

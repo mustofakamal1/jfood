@@ -1,6 +1,10 @@
 package mustofakamal.jfood.controller;
 
-        import mustofakamal.jfood.*;
+        import mustofakamal.jfood.database.postgre.DatabaseLocationPostgre;
+        import mustofakamal.jfood.database.postgre.DatabaseSellerPostgre;
+        import mustofakamal.jfood.exception.SellerNotFoundException;
+        import mustofakamal.jfood.structure.model.Location;
+        import mustofakamal.jfood.structure.model.Seller;
         import org.springframework.web.bind.annotation.*;
 
         import java.util.ArrayList;
@@ -11,13 +15,13 @@ public class SellerController {
 
     @RequestMapping(value = "", method = RequestMethod.GET)
     public ArrayList<Seller> getAllSeller() {
-        return DatabaseSeller.getSellerDatabase();
+        return DatabaseSellerPostgre.getSellerDatabase();
     }
 
     @RequestMapping("/{id}")
     public Seller getSellerById(@PathVariable int id) {
         try {
-            Seller seller = DatabaseSeller.getSellerById(id);
+            Seller seller = DatabaseSellerPostgre.getSeller(id);
             return seller;
         } catch (SellerNotFoundException e) {
             System.out.println(e.getMessage());
@@ -33,9 +37,9 @@ public class SellerController {
                           @RequestParam(value="description") String description,
                           @RequestParam(value="city") String city)
     {
-            Seller seller = new Seller(DatabaseSeller.getLastId()+1, name, email, phoneNumber,
-                    new Location(city, provinces,description));
-            DatabaseSeller.addSeller(seller);
+            Seller seller = new Seller(DatabaseSellerPostgre.getLastSellerId()+1, name, email, phoneNumber,
+                    new Location(DatabaseLocationPostgre.getLastLocationId(), city, provinces,description));
+            DatabaseSellerPostgre.insertSeller(seller);
             return seller;
     }
 }

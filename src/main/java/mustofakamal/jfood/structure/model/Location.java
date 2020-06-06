@@ -1,4 +1,4 @@
-package mustofakamal.jfood;
+package mustofakamal.jfood.structure.model;
 /**
  * Seller adalah class yang berfungsi memproses informasi location di jFood.
  *
@@ -7,6 +7,7 @@ package mustofakamal.jfood;
  */
 public class Location {
     // instance variables - replace the example below with your own
+    private int id;
     private String province;
     private String description;
     private String city;
@@ -25,11 +26,20 @@ public class Location {
      * @param location    lokasi dari seller yang diambil dari
      *                    salah satu object dari class location
      */
-    public Location(String city, String province, String description) {
+    public Location(int id, String city, String province, String description) {
         // initialise instance variables
+        this.id = id;
         this.city = city;
         this.province = province;
         this.description = description;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     /**

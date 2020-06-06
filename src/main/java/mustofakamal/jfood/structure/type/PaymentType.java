@@ -1,4 +1,4 @@
-package mustofakamal.jfood;
+package mustofakamal.jfood.structure.type;
 /**
  * Enumeration class PaymentType - write a description of the enum class here
  *

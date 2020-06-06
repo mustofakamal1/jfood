@@ -1,4 +1,4 @@
-package mustofakamal.jfood;
+package mustofakamal.jfood.structure.model;
 /**
  * Seller adalah class yang berfungsi memproses informasi seller di jFood.
  *

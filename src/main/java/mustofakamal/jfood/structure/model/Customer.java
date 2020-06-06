@@ -1,4 +1,4 @@
-package mustofakamal.jfood;
+package mustofakamal.jfood.structure.model;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;

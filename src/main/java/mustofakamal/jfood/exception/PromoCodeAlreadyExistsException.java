@@ -1,4 +1,7 @@
-package mustofakamal.jfood;
+package mustofakamal.jfood.exception;
+
+import mustofakamal.jfood.structure.model.Promo;
+
 public class PromoCodeAlreadyExistsException extends Exception {
 
     private Promo promo_error;

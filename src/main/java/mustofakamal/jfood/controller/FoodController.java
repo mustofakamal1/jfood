@@ -1,6 +1,11 @@
 package mustofakamal.jfood.controller;
 
-import mustofakamal.jfood.*;
+import mustofakamal.jfood.database.postgre.DatabaseFoodPostgre;
+import mustofakamal.jfood.database.postgre.DatabaseSellerPostgre;
+import mustofakamal.jfood.exception.FoodNotFoundException;
+import mustofakamal.jfood.exception.SellerNotFoundException;
+import mustofakamal.jfood.structure.model.Food;
+import mustofakamal.jfood.structure.type.FoodCategory;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
@@ -11,13 +16,13 @@ public class FoodController {
 
     @RequestMapping(value = "", method = RequestMethod.GET)
     public ArrayList<Food> getAllFood() {
-        return DatabaseFood.getFoodDatabase();
+        return DatabaseFoodPostgre.getFoodDatabase();
     }
 
     @RequestMapping("/{id}")
     public Food getFoodById(@PathVariable int id) {
         try {
-            Food food = DatabaseFood.getFoodById(id);
+            Food food = DatabaseFoodPostgre.getFood(id);
             return food;
         } catch (FoodNotFoundException e) {
             e.getMessage();
@@ -27,12 +32,12 @@ public class FoodController {
 
     @RequestMapping("/seller/{sellerId}")
     public ArrayList<Food> getFoodBySeller(@PathVariable int sellerId) {
-        return DatabaseFood.getFoodBySeller(sellerId);
+        return DatabaseFoodPostgre.getFoodBySeller(sellerId);
     }
 
     @RequestMapping("/category/{category}")
     public ArrayList<Food> getFoodByCategory(@PathVariable FoodCategory category) {
-        return DatabaseFood.getFoodByCategory(category);
+        return DatabaseFoodPostgre.getFoodByCategory(category);
     }
 
     @RequestMapping(value = "", method = RequestMethod.POST)
@@ -42,9 +47,9 @@ public class FoodController {
                                      @RequestParam(value="sellerId") int sellerId)
     {
         try {
-            Food food = new Food(DatabaseFood.getLastId()+1, name, DatabaseSeller.getSellerById(sellerId),
-                    price, category);
-            DatabaseFood.addFood(food);
+            Food food = new Food(DatabaseFoodPostgre.getLastFoodId()+1, name, DatabaseSellerPostgre.
+                    getSeller(sellerId), price, category);
+            DatabaseFoodPostgre.insertFood(food);
             return food;
         } catch (SellerNotFoundException e) {
             System.out.println(e.getMessage());
